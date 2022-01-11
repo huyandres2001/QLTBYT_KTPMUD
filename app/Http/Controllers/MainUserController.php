@@ -56,7 +56,7 @@ class MainUserController extends Controller
     { 
         $id = Auth::user()->id; //take the id
         $user = User::find($id); //find the id in the models
-        return view('user.profile.change_password', compact('user'));
+        return view('user.profile.view_password', compact('user'));
     }
     public function UserPasswordUpdate(Request $request)
     {
@@ -68,9 +68,9 @@ class MainUserController extends Controller
         $hashedPassword = Auth::user()->password;
         if(Hash::check($request->current_password, $hashedPassword)){
             $user = User::find(Auth::id());
-            $user->password = Hash::make($request->Password);
+            $user->password = Hash::make($request->password);
             $user->save();
-            return redirect()->route('user.password.change');
+            return redirect()->route('user.password.view');
         }
         else
         {

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainUserController;
-
+use App\Http\Controllers\ThietBiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +33,7 @@ Route::group(['prefix'=>'user'], function (){
 
 //thiet bi
 Route::group(['prefix' => 'thietbi'], function(){
-    Route::get('/danhsach', [ThieBiController::class, 'DanhSach'])->name('thietbi.danhsach');
-    
+    Route::get('/danhsach', [ThietBiController::class, 'DanhSach'])->name('thietbi.danhsach');
+    Route::get('/them', [ThietBiController::class, 'GetThem'])->name('thietbi.getthem');
+    Route::post('/them', [ThietBiController::class, 'PostThem'])->name('thietbi.postthem');
 });

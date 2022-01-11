@@ -15,26 +15,27 @@ class CreateThietbiTable extends Migration
     {
         Schema::create('thietbi', function (Blueprint $table) {
             $table->id();
-            $table->string('idThietBi')->unique();
+            $table->string('idThietBi')->unique()->nullable();
             $table->string('TenThietBi');
             $table->string('Model');
             $table->string('Serial')->unique();
             $table->string('MucDoRuiRo')->nullable();
             $table->string('SoLuong');
+            $table->string('GiaNhap')->nullable();
             $table->string('DonViTinh');
-            $table->integer('TinhTrang');
-            $table->integer('idNhomThietBi')->nullable();
-            $table->integer('idLoaiThietBi')->nullable();
-            $table->integer('idCanBoVatTuPhuTrach')->nullable();
-            $table->integer('idCanBoKhoaPhongPhuTrach')->nullable();
-            $table->integer('idKhoaPhongSuDung')->nullable();
-            $table->integer('idNhaCungCap')->nullable();
-            $table->integer('idDonViBaoTri')->nullable();
+            $table->string('TinhTrang');
+            $table->string('idNhomThietBi')->nullable();
+            $table->string('idLoaiThietBi')->nullable();
+            $table->string('idCanBoVatTuPhuTrach')->nullable();
+            $table->string('idCanBoKhoaPhongPhuTrach')->nullable();
+            $table->string('idKhoaPhongSuDung')->nullable();
+            $table->string('idNhaCungCap')->nullable();
+            $table->string('idDonViBaoTri')->nullable();
             $table->string('HangSanXuat')->nullable();
             $table->string('XuatXu')->nullable();
             $table->year('NamSanXuat')->nullable();
-            $table->integer('KiemDinhDinhKy')->nullable();
-            $table->date('NgayKiemDinhLanDau')->nullable();
+            $table->string('KiemDinhDinhKy')->nullable();
+            $table->date('NgayKiemDinhGanNhat')->nullable();
             $table->date('NgayNhapKho')->nullable();
             $table->date('NgayHetHanBaoHanh')->nullable();
             $table->string('ThongSoKyThuat')->nullable();
@@ -43,6 +44,7 @@ class CreateThietbiTable extends Migration
             $table->integer('KhauHaoHangNam')->nullable();
             $table->integer('GiaTriHienTai')->nullable();
             $table->year('NamSuDung')->nullable();
+            $table->text('AnhMinhHoa')->nullable();
             $table->timestamps();
         });
     }

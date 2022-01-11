@@ -2,8 +2,8 @@
     <!-- logo -->
     <div class="sidebar_logo">
         <a href="{{ route('user.dashboard') }}">
-            <img src="{{ asset('UserBackend/panel/assets/images/logo.png') }}" alt="" class="img-fluid logo1">
-            <img src="{{ asset('UserBackend/panel/assets/images/logo_small.png') }}" alt="" class="img-fluid logo2">
+            <img src="" alt="" class="img-fluid logo2">
+            <img src="" alt="" class="img-fluid logo1"> 
         </a>
     </div>
     <div class="sidebar_btn">

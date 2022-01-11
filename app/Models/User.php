@@ -24,9 +24,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'HoVaTen',
+        'Email',
         'password',
+        'SoDienThoai',
+        'DiaChi',
+        'PhanQuyen',
+        'idKhoaPhong',
+        'GioiTinh',
+        'NgaySinh',
+        'idNguoiDung',
+
     ];
 
     /**
@@ -58,4 +66,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function khoaPhong()
+    {
+        return $this->belongsTo(KhoaPhong::class, 'idKhoaPhong');
+    }
 }
+

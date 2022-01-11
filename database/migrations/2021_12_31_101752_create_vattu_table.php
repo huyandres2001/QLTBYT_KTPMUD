@@ -25,7 +25,7 @@ class CreateVattuTable extends Migration
             $table->string('GiaNhap');
             $table->string('HangSanXuat')->nullable();
             $table->string('XuatXu')->nullable();
-            $table->string('NhaCungCap')->nullable();
+            $table->string('idNhaCungCap')->nullable();
             $table->string('Serial')->unique();
             $table->string('Model');
             $table->year('NamSanXuat')->nullable();
@@ -35,7 +35,6 @@ class CreateVattuTable extends Migration
             $table->string('ThongSoKyThuat')->nullable();
             $table->string('CauHinhKyThuat')->nullable();
             $table->string('QuyTrinhSuDung')->nullable();
-            $table->integer('idNguoiNhap')->nullable();
             $table->date('NgayNhap')->nullable();
             $table->string('GhiChu')->nullable();
             $table->timestamps();

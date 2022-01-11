@@ -55,7 +55,7 @@
         <!-- /sidebar Area-->
 
         <div class="content_wrapper">
-
+            @yield('content')
             @yield('user')
         </div>
         <!--/ content wrapper -->
