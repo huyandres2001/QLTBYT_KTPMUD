@@ -10,7 +10,7 @@ class NhaCungCap extends Model
     use HasFactory;
     protected $table = 'nhacungcap';
     protected $fillable = [
-            'idNhacungcap', 'TenNhaCungCap', 'NguoiDaiDien',
+            'idNhaCungCap', 'TenNhaCungCap', 'NguoiDaiDien',
              'DiaChi', 'GhiChu', 'Email', 'SoDienThoai', 'MaSoThue',
     ];
     public function ThietBi()

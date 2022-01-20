@@ -1,10 +1,16 @@
 @extends('user.user_master')
 @section('content')
+
+@php
+// dd($DSThietBi[0]->id);
+@endphp
+
+
 <section class="table_area">
     <div class="panel">
         <div class="panel_header">
             <div class="panel_title" style="text-align:center"><span>Danh Sách Thiết Bị</span></div>
-            
+
         </div>
         <div class="panel_body">
             <div class="table-responsive">
@@ -13,7 +19,6 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên Thiết Bị</th>
-                            <th>Ảnh Minh Họa</th>
                             <th>Mã Thiết Bị</th>
                             <th>Model</th>
                             <th>Serial</th>
@@ -30,37 +35,61 @@
                         <tr>
                             <td>{{ $i++ }}</td>
                             <td>{{ $ThietBi->TenThietBi }}</td>
-                            <td>
-                                <div class="mb-3">
-                                    <img id="showImage"
-                                        src=" {{ empty($ThietBi->AnhMinhHoa) ? url('upload/no_image.jpg') : url('upload/ThietBi/' . $user->AnhMinhHoa) }}"
-                                        style="width:100px; height: 100px;">
-                                </div>
-                            </td>
+
                             <td>{{ $ThietBi->idThietBi }}</td>
+
                             <td>{{ $ThietBi->Model }}</td>
+
                             <td>{{ $ThietBi->Serial }}</td>
+
                             <td>{{ $ThietBi->TinhTrang }}</td>
+
+                            @if($ThietBi->idKhoaPhongSuDung)
                             <td>{{ $ThietBi->idKhoaPhongSuDung }}</td>
+                            @else
+                            <td style="color:red;">Không có dữ liệu</td>
+                            @endif
+
+                            @if($ThietBi->idNhomThietBi)
                             <td>{{ $ThietBi->NhomThietBi->TenNhomThietBi }}</td>
+                            @else
+                            <td style="color:red;">Không có dữ liệu</td>
+                            @endif
+
+                            @if($ThietBi->idLoaiThietBi)
                             <td>{{ $ThietBi->idLoaiThietBi }}</td>
+                            @else
+                            <td style="color:red;">Không có dữ liệu</td>
+                            @endif
+
                             <td>
                                 @if ($ThietBi->TinhTrang == 'Đang Báo Hỏng')
                                 <a href="#"><i class="fa fa-plus-square" style="font-size: 15px; color:#000000;"
                                         title="Tạo lịch sửa chữa" aria-hidden="true"></i></a>
                                 @endif
-                                <a href="#"><i class="fa fa-eye" style="font-size: 15px;color:#00cbfd"
-                                        title="Xem hồ sơ thiết bị" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-edit" style="font-size: 15px;" title="Chỉnh sửa thông tin"
-                                        aria-hidden="true"></i></a>
-                                <a href="#" onclick="return confirm('Bạn có muốn xóa?');"><i class="fa fa-trash"
-                                        style="font-size: 15px;color:#ff0404" title="Xóa thiết bị"
-                                        aria-hidden="true"></i></a>
-                            </td>
 
+                                @if ($ThietBi->TinhTrang == 'Mới')
+                                <a href="/thietbi/getbangiao/{{$ThietBi->id}}" ><i class="fa fa-check"
+                                        style="font-size: 15px; color:#1ebb33;" title="Bàn giao thiết bị"
+                                        aria-hidden="true"></i></a>
+                                @endif
+
+                                <a href="/thietbi/xem/{{$ThietBi->id}}"><i class="fa fa-eye"
+                                        style="font-size: 15px;color:#00cbfd" title="Xem hồ sơ thiết bị"
+                                        aria-hidden="true"></i></a>
+                                <a href="/thietbi/getsua/{{$ThietBi->id}}"><i class="fa fa-edit"
+                                        style="font-size: 15px;" title="Chỉnh sửa thông tin" aria-hidden="true"></i></a>
+                                </a>
+                                <a href="/thietbi/xoa/{{$ThietBi->id}}" onclick="return confirm('Bạn có muốn xóa?')"><i
+                                        class="fa fa-trash" style="font-size: 15px;color:#ff0404" title="Xóa thiết bị"
+                                        aria-hidden="true"></i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
+
+                    
                 </table>
                 {{ $DSThietBi->links('pagination::bootstrap-4') }}
             </div>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TinhTrangSeeder extends Seeder
 {
@@ -16,11 +17,12 @@ class TinhTrangSeeder extends Seeder
         //
         DB::table('tinhtrang')->delete();
         DB::table('tinhtrang')->insert([
-            ['TinhTrang' => 'Mới, Chưa bàn giao'],
+            ['TinhTrang' => 'Mới, chưa bàn giao'],
             ['TinhTrang' => 'Đang sử dụng'],
             ['TinhTrang' => 'Đang báo hỏng'],
             ['TinhTrang' => 'Đang sửa chữa'],
-            ['TinhTrang' => 'Ngừng sử Dụng'],
+            ['TinhTrang' => 'Ngừng sử dụng'],
+            ['TinhTrang' => 'Đã thanh lý'],
         ]);
     }
 }

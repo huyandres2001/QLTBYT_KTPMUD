@@ -15,7 +15,7 @@ class CreateLoaithietbiTable extends Migration
     {
         Schema::create('loaithietbi', function (Blueprint $table) {
             $table->id();
-            $table->string('TenLoaiThietBi');
+            $table->string('idLoaiThietBi');
             $table->string('idNhomThietBi');
             $table->timestamps();
         });

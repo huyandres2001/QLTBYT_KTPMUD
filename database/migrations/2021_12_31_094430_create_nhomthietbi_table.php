@@ -15,7 +15,7 @@ class CreateNhomthietbiTable extends Migration
     {
         Schema::create('nhomthietbi', function (Blueprint $table) {
             $table->id();
-            $table->string('idNhomThietBi')->unique();
+            $table->string('idNhomThietBi');
             $table->string('TenNhomThietBi');
             $table->timestamps();
         });

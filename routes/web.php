@@ -23,7 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 Route::get('/dashboard', [MainUserController::class, 'UserDashboard'])->name('user.dashboard');
 //thong tin nguoi dung
-Route::group(['prefix'=>'user'], function (){
+Route::group(['prefix' => 'user'], function () {
     Route::get('/logout', [MainUserController::class, 'Logout'])->name('user.logout');
     Route::get('/profile/edit', [MainUserController::class, 'UserProfileEdit'])->name('user.profile.edit');
     Route::post('/profile/store', [MainUserController::class, 'UserProfileStore'])->name('user.profile.store');
@@ -32,8 +32,15 @@ Route::group(['prefix'=>'user'], function (){
 });
 
 //thiet bi
-Route::group(['prefix' => 'thietbi'], function(){
+Route::group(['prefix' => 'thietbi'], function () {
     Route::get('/danhsach', [ThietBiController::class, 'DanhSach'])->name('thietbi.danhsach');
-    Route::get('/them', [ThietBiController::class, 'GetThem'])->name('thietbi.getthem');
-    Route::post('/them', [ThietBiController::class, 'PostThem'])->name('thietbi.postthem');
+    Route::get('/getthem', [ThietBiController::class, 'GetThem'])->name('thietbi.getthem');
+    //khi thay đổi nhóm thiết bị thì danh mục loại thiết bị đc hiển thị cũng sẽ thay đổi theo
+    Route::get('thietbi/layloaithietbitunhomthietbi/{id}', [ThietBiController::class, 'LayLoaiThietBiTuNhomThietBi']);
+    Route::post('/postthem', [ThietBiController::class, 'PostThem'])->name('thietbi.postthem');
+    Route::get('/xoa/{id}', [ThietBiController::class, 'Xoa'])->name('thietbi.xoa');
+    Route::get('/getsua/{id}', [ThietBiController::class, 'GetSua'])->name('thietbi.getsua');
+    Route::post('/postsua/{id}', [ThietBiController::class, 'PostSua'])->name('thietbi.postsua');
+    Route::get('/xem/{id}', [ThietBiController::class, 'Xem'])->name('thietbi.xem');
+    Route::get('/getbangiao/{id}', [ThietbiController::class, 'GetBanGiao']);
 });

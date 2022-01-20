@@ -10,7 +10,7 @@ class LoaiThietBi extends Model
     use HasFactory;
     protected $table = 'loaithietbi';
     protected $fillable = [
-        'TenLoaiThietBi', 'idNhomThietBi',
+        'idLoaiThietBi', 'idNhomThietBi',
     ];
     public function ThietBi()
     {

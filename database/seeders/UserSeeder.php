@@ -32,7 +32,21 @@ class UserSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => Hash::make('111111111'), // password
                 'remember_token' => Str::random(10),
-            ]
+            ],
+            [
+                'HoVaTen' => 'Người dùng test',
+                'Email' => 'test@gmail.com',
+                'PhanQuyen' => 'Cán bộ khoa phòng',
+                'idNguoiDung' => '20192914',
+                'idKhoaPhong' => 'Admin',
+                'NgaySinh' => '28/12/2001',
+                'DiaChi' => 'HaTay',
+                'GioiTinh' => 'Nam',
+                'SoDienThoai' => '0123456789',
+                'email_verified_at' => now(),
+                'password' => Hash::make('111111111'), // password
+                'remember_token' => Str::random(10),
+            ],
         ]);
     }
 }

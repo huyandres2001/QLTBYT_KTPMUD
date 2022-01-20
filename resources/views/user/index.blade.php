@@ -1,6 +1,27 @@
 
 <!--content in the middle of the page-->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @extends('user.user_master')
 @section('user')
     <!--middle content wrapper-->

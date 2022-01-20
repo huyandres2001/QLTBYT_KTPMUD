@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('SoDienThoai')->unique()->nullable();
             $table->string('DiaChi')->nullable();
             $table->string('PhanQuyen');
-            $table->string('idKhoaPhong')->unique()->nullable();
+            $table->string('idKhoaPhong')->nullable();
             $table->string('idNguoiDung');
             $table->string('GioiTinh')->nullable();
             $table->string('NgaySinh')->nullable();

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -50,7 +49,7 @@ class MainUserController extends Controller
            $data['profile_photo_path'] = $filename;
         }
         $data->save();
-        return redirect()->route('user.profile.edit')->with('message','Data updated Successfully');
+        return redirect()->route('user.profile.edit')->with('message','Thay đổi thông tin thành công');
     }
     public function UserPasswordView()
     { 

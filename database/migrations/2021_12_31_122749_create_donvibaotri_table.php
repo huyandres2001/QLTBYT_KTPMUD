@@ -19,6 +19,7 @@ class CreateDonvibaotriTable extends Migration
             $table->string('TenDonViBaoTri');
             $table->string('DiaChi');
             $table->string('NguoiDaiDien');
+            $table->string('idNhaCungCap')->nullable();
             $table->string('SoDienThoai')->unique();
             $table->string('Email')->unique();
             $table->string('MaSoThue')->nullable();

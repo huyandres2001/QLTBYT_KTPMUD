@@ -15,7 +15,7 @@ class CreateNhacungcapTable extends Migration
     {
         Schema::create('nhacungcap', function (Blueprint $table) {
             $table->id();
-            $table->string('idNhacungcap')->unique();
+            $table->string('idNhaCungCap')->unique();
             $table->string('TenNhaCungCap');
             $table->string('NguoiDaiDien');
             $table->string('DiaChi');

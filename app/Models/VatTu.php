@@ -11,7 +11,7 @@ class VatTu extends Model
     protected $table = "vattu";
     protected $fillable = [
         'TenVatTu', 'idVatTu', 'LoaiVatTu', 'SoLuong', 'DonViTinh',
-         'TrangThai', 'idThietBiTuongUng', 'GiaNhap', 'HangSanXuat', 
+         'TrangThai', 'SerialThietBiTuongUng', 'GiaNhap', 'HangSanXuat', 
          'XuatXu', 'idNhaCungCap', 'Serial', 'Model', 'NamSanXuat', 
          'NamSuDung', 'NgayNhapKho', 'HanSuDung', 'ThongSoKyThuat', 
          'CauHinhKyThuat', 'QuyTrinhSuDung', 'NgayNhap', 
@@ -20,7 +20,7 @@ class VatTu extends Model
     public function ThietBiTuongUng(Type $var = null)
     {
         # code...
-        return $this->belongsTo(ThietBi::class, 'idThietBi','idThietBiTuongUng');
+        return $this->belongsTo(ThietBi::class, 'Serial','SerialThietBiTuongUng');
     }
     public function NhaCungCap(Type $var = null)
     {

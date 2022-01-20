@@ -18,7 +18,6 @@ class ThietBiSeeder extends Seeder
         DB::table('thietbi')->delete();
         DB::table('thietbi')->insert([
             [
-                'idThietBi' => '001',
                 'TenThietBi' => 'Máy hút dịch Yuwell',
                 'Model' => '7E-A',
                 'Serial' => '00434',
@@ -26,7 +25,7 @@ class ThietBiSeeder extends Seeder
                 'SoLuong' => '1',
                 'DonViTinh' => 'Cái', 
                 'TinhTrang' => 'Đã Thanh Lý', 
-                'idNhomThietBi' => 'N2',
+                'idNhomThietBi' => '',
                 'idLoaiThietBi' => 'Máy hút dịch', 
                 'idCanBoVatTuPhuTrach' => '20192914',
                 'idCanBoKhoaPhongPhuTrach' => '', 
@@ -49,7 +48,6 @@ class ThietBiSeeder extends Seeder
                 'GiaNhap' => '0',
             ],
             [
-                'idThietBi' => '002',
                 'TenThietBi' => 'Bơm tiêm điện Terumo',
                 'Model' => 'TE*SS700N03',
                 'Serial' => '1703010872',
@@ -57,7 +55,7 @@ class ThietBiSeeder extends Seeder
                 'SoLuong' => '1',
                 'DonViTinh' => 'Cái', 
                 'TinhTrang' => 'Đang Sử Dụng', 
-                'idNhomThietBi' => 'N2',
+                'idNhomThietBi' => '',
                 'idLoaiThietBi' => 'Bơm tiêm điện', 
                 'idCanBoVatTuPhuTrach' => '',
                 'idCanBoKhoaPhongPhuTrach' => '', 
@@ -80,7 +78,6 @@ class ThietBiSeeder extends Seeder
                 'GiaNhap' => '0',
             ],
             [
-                'idThietBi' => '003',
                 'TenThietBi' => 'Máy li tâm lạnh',
                 'Model' => 'Z216MK',
                 'Serial' => '61B2100088',
@@ -88,7 +85,7 @@ class ThietBiSeeder extends Seeder
                 'SoLuong' => '1',
                 'DonViTinh' => 'Cái', 
                 'TinhTrang' => 'Đang Báo Hỏng', 
-                'idNhomThietBi' => 'N7',
+                'idNhomThietBi' => '',
                 'idLoaiThietBi' => 'Máy ly tâm', 
                 'idCanBoVatTuPhuTrach' => '20192914',
                 'idCanBoKhoaPhongPhuTrach' => '', 
@@ -111,7 +108,6 @@ class ThietBiSeeder extends Seeder
                 'GiaNhap' => '0',
             ],
             [
-                'idThietBi' => '004',
                 'TenThietBi' => 'Máy thận nhân tạo SURDIAL',
                 'Model' => 'SURDIAL',
                 'Serial' => '09T6606',
@@ -119,7 +115,7 @@ class ThietBiSeeder extends Seeder
                 'SoLuong' => '1',
                 'DonViTinh' => 'Cái', 
                 'TinhTrang' => 'Đang Sửa Chữa', 
-                'idNhomThietBi' => 'N3',
+                'idNhomThietBi' => '',
                 'idLoaiThietBi' => 'Máy thận nhân tạo', 
                 'idCanBoVatTuPhuTrach' => '20192914',
                 'idCanBoKhoaPhongPhuTrach' => '', 
@@ -142,7 +138,6 @@ class ThietBiSeeder extends Seeder
                 'GiaNhap' => '0',
             ],
             [
-                'idThietBi' => '005',
                 'TenThietBi' => 'Máy ép tim',
                 'Model' => '7501-002',
                 'Serial' => 'B2090',
@@ -151,7 +146,7 @@ class ThietBiSeeder extends Seeder
                 'GiaNhap' => '0',
                 'DonViTinh' => 'Cái', 
                 'TinhTrang' => 'Ngừng Sử Dụng', 
-                'idNhomThietBi' => 'N2',
+                'idNhomThietBi' => '',
                 'idLoaiThietBi' => 'Hệ thống/ Thiết bị hồi sức khác', 
                 'idCanBoVatTuPhuTrach' => '20192914',
                 'idCanBoKhoaPhongPhuTrach' => '', 

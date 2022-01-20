@@ -18,163 +18,163 @@ class LoaiThietBiSeeder extends Seeder
         DB::table('loaithietbi')->delete();
         DB::table('loaithietbi')->insert([
             [
-                'TenLoaiThietBi' => 'Thiết bị phụ trợ chẩn đoán hình ảnh',
+                'idLoaiThietBi' => 'Thiết bị phụ trợ chẩn đoán hình ảnh',
                 'idNhomThietBi' => 'N1'
             ],
             [
-                'TenLoaiThietBi' => 'Máy X Quang',
+                'idLoaiThietBi' => 'Máy X Quang',
                 'idNhomThietBi' => 'N1'
             ],
             [
-                'TenLoaiThietBi' => 'Máy siêu âm',
+                'idLoaiThietBi' => 'Máy siêu âm',
                 'idNhomThietBi' => 'N1'
             ],
             [
-                'TenLoaiThietBi' => 'Hệ thống chụp mạch số hóa xóa nền (DSA)',
+                'idLoaiThietBi' => 'Hệ thống chụp mạch số hóa xóa nền (DSA)',
                 'idNhomThietBi' => 'N1'
             ],
             [
-                'TenLoaiThietBi' => 'Hệ thống chụp Cộng hưởng từ',
+                'idLoaiThietBi' => 'Hệ thống chụp Cộng hưởng từ',
                 'idNhomThietBi' => 'N1'
             ],
             [
-                'TenLoaiThietBi' => 'Hệ thống CT - Scanner',
+                'idLoaiThietBi' => 'Hệ thống CT - Scanner',
                 'idNhomThietBi' => 'N1'
             ],
             
             [
-                'TenLoaiThietBi' => 'Hệ thống/ Thiết bị hồi sức khác',
+                'idLoaiThietBi' => 'Hệ thống/ Thiết bị hồi sức khác',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy hút dịch',
+                'idLoaiThietBi' => 'Máy hút dịch',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy thở',
+                'idLoaiThietBi' => 'Máy thở',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy khí dung',
+                'idLoaiThietBi' => 'Máy khí dung',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy theo dõi bệnh nhân',
+                'idLoaiThietBi' => 'Máy theo dõi bệnh nhân',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy phá rung tim',
+                'idLoaiThietBi' => 'Máy phá rung tim',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Bơm tiêm điện',
+                'idLoaiThietBi' => 'Bơm tiêm điện',
                 'idNhomThietBi' => 'N2'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Giường cấp cứu hồi sức',
+                'idLoaiThietBi' => 'Giường cấp cứu hồi sức',
                 'idNhomThietBi' => 'N2'
             ],
            
             [
                  
-                'TenLoaiThietBi' => 'Hệ thống tuần hoàn ngoài cơ thể ECMO',
+                'idLoaiThietBi' => 'Hệ thống tuần hoàn ngoài cơ thể ECMO',
                 'idNhomThietBi' => 'N3'
             ],[
                  
-                'TenLoaiThietBi' => 'Máy lọc màng bụng',
+                'idLoaiThietBi' => 'Máy lọc màng bụng',
                 'idNhomThietBi' => 'N3'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy lọc HDF online',
+                'idLoaiThietBi' => 'Máy lọc HDF online',
                 'idNhomThietBi' => 'N3'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy siêu lọc máu liên tục',
+                'idLoaiThietBi' => 'Máy siêu lọc máu liên tục',
                 'idNhomThietBi' => 'N3'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy thận nhân tạo',
+                'idLoaiThietBi' => 'Máy thận nhân tạo',
                 'idNhomThietBi' => 'N3'
             ],
             
             [
                  
-                'TenLoaiThietBi' => 'Thiết bị phụ trợ',
+                'idLoaiThietBi' => 'Thiết bị phụ trợ',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Hệ thống/ Thiết bị khác',
+                'idLoaiThietBi' => 'Hệ thống/ Thiết bị khác',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy sắc ký',
+                'idLoaiThietBi' => 'Máy sắc ký',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Kính hiển vi',
+                'idLoaiThietBi' => 'Kính hiển vi',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy quang phổ',
+                'idLoaiThietBi' => 'Máy quang phổ',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Thiết bị hỗ trợ sinh sản + Bảo quản mô',
+                'idLoaiThietBi' => 'Thiết bị hỗ trợ sinh sản + Bảo quản mô',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy xét nghiệm huyết học',
+                'idLoaiThietBi' => 'Máy xét nghiệm huyết học',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Thiết bị xét nghiệm vi sinh + sinh học phân tử + di truyền',
+                'idLoaiThietBi' => 'Thiết bị xét nghiệm vi sinh + sinh học phân tử + di truyền',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy ly tâm',
+                'idLoaiThietBi' => 'Máy ly tâm',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Hệ thống Elisa',
+                'idLoaiThietBi' => 'Hệ thống Elisa',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy điện di',
+                'idLoaiThietBi' => 'Máy điện di',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy bảo quản lạnh',
+                'idLoaiThietBi' => 'Máy bảo quản lạnh',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Máy xét nghiệm sinh hóa, miễn dịch',
+                'idLoaiThietBi' => 'Máy xét nghiệm sinh hóa, miễn dịch',
                 'idNhomThietBi' => 'N7'
             ],
             [
                  
-                'TenLoaiThietBi' => 'Giải phẫu bệnh',
+                'idLoaiThietBi' => 'Giải phẫu bệnh',
                 'idNhomThietBi' => 'N7'
             ],
             
