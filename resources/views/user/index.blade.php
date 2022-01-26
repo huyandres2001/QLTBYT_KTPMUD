@@ -1,208 +1,83 @@
-
-<!--content in the middle of the page-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @extends('user.user_master')
-@section('user')
-    <!--middle content wrapper-->
-<div class="middle_content_wrapper">
-    <!-- counter_area -->
-    <section class="counter_area">
+@section('content')
+<div class="page-wrapper">
+    <div class="content">
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="counter">
-                    <div class="counter_item">
-                         <span><i class="fa fa-code"></i></span>
-                          <h2 class="timer count-number" data-to="300" data-speed="1500"></h2>
-                    </div>
-                 
-                   <p class="count-text ">SomeText GoesHere</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="counter">
-                    <div class="counter_item">
-                        <span><i class="fa fa-coffee"></i></span>
-                         <h2 class="timer count-number" data-to="1700" data-speed="1500"></h2>
-                    </div>
-                    <p class="count-text ">SomeText GoesHere</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="counter">
-                    <div class="counter_item">
-                        <span><i class="fas fa-user"></i></span>
-                         <h2 class="timer count-number" data-to="11900" data-speed="1500"></h2>
-                    </div>
-                    <p class="count-text ">SomeText GoesHere</p>
-                      
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="counter">
-                    <div class="counter_item">
-                        <span><i class="fa fa-bug"></i></span>
-                         <h2 class="timer count-number" data-to="157" data-speed="1500"></h2>
-                    </div>
-                     <p class="count-text ">SomeText GoesHere</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/ counter_area -->
-    <!-- table area -->
-    <section class="table_area">
-        <div class="panel">
-            <div class="panel_header">
-                <div class="panel_title"><span>FooTable with row toggler, sorting, filter and pagination</span></div>
-            </div>
-            <div class="panel_body">
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                          <tr>
-                              <th>ID</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Job Title</th>
-                              <th>Started On</th>
-                              <th data-hide="all">Date of Birth</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>1</td>
-                              <td>Dennise</td>
-                              <td>Fuhrman</td>
-                              <td>High School History Teacher</td>
-                              <td>November 8th 2011</td>
-                              <td>July 25th 1960</td>
-                          </tr>
-                          <tr>
-                              <td>2</td>
-                              <td>Elodia</td>
-                              <td>Weisz</td>
-                              <td>Wallpaperer Helper</td>
-                              <td>October 15th 2010</td>
-                              <td>March 30th 1982</td>
-                          </tr>
-                          <tr>
-                              <td>3</td>
-                              <td>Raeann</td>
-                              <td>Haner</td>
-                              <td>Internal Medicine Nurse Practitioner</td>
-                              <td>November 28th 2013</td>
-                              <td>February 26th 1966</td>
-                          </tr>
-                          <tr>
-                              <td>4</td>
-                              <td>Junie</td>
-                              <td>Landa</td>
-                              <td>Offbearer</td>
-                              <td>October 31st 2010</td>
-                              <td>March 29th 1966</td>
-                          </tr>
-                          <tr>
-                              <td>5</td>
-                              <td>Solomon</td>
-                              <td>Bittinger</td>
-                              <td>Roller Skater</td>
-                              <td>December 29th 2011</td>
-                              <td>September 22nd 1964</td>
-                          </tr>
-                          <tr>
-                              <td>6</td>
-                              <td>Bar</td>
-                              <td>Lewis</td>
-                              <td>Clown</td>
-                              <td>November 12th 2012</td>
-                              <td>August 4th 1991</td>
-                          </tr>
-                          <tr>
-                              <td>7</td>
-                              <td>Usha</td>
-                              <td>Leak</td>
-                              <td>Ships Electronic Warfare Officer</td>
-                              <td>August 14th 2012</td>
-                              <td>November 20th 1979</td>
-                          </tr>
-                          <tr>
-                              <td>8</td>
-                              <td>Lorriane</td>
-                              <td>Cooke</td>
-                              <td>Technical Services Librarian</td>
-                              <td>September 21st 2010</td>
-                              <td>April 7th 1969</td>
-                          </tr>
-                          <tr>
-                              <td>9</td>
-                              <td>Lorriane</td>
-                              <td>Cooke</td>
-                              <td>Technical Services Librarian</td>
-                              <td>September 21st 2010</td>
-                              <td>April 7th 1969</td>
-                          </tr>
-                      </tbody>
-                    </table>
-                </div>
-            </div>
-        </div> <!-- /table -->
-        <!-- chart area -->
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="panel chart_area">
-                    <div class="panel_header">
-                        <div class="panel_title">
-                            <span class="panel_icon"><i class="far fa-chart-bar"></i></span>
-                            <span>bar chat</span>
-                        </div>
-                    </div>
-                    <div class="panel_body">
-                        <div id="bar-chart">
-                            <div id="bar-legend"></div>
-                            <canvas id="bar-canvas" ></canvas>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-lg-4">
-                <div class="panel">
-                    <div class="panel_header">
-                        <div class="panel_title">
-                            <span class="panel_icon"><i class="fas fa-chart-pie"></i></span>
-                            <span>pie chat</span>
-                        </div>
-                    </div>
-                    <div class="panel_body">
-                        <div id="piechart"></div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    </section>                   
-</div><!--/middle content wrapper-->
 
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg2" style="background-color: #ffc107"><i class="fa fa-user-o"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title2" style="background-color: #ffc107">Người dùng<i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg3"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title3">Khoa phòng<i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg4" style="background-color: #009efb "><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title4" style="background-color: #009efb">Thiết bị chưa bàn giao<i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg4" style="background-color:#79CDCD "><i class="fa fa-user-md" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title4" style="background-color:#79CDCD ">Thiết bị đang sử dụng<i class="fa fa-check" aria-hidden="true"></i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg4" style="background-color: red"><i class="fa fa-flag-o" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title4" style="background-color: red">Thiết bị hỏng<i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg4" style="background-color: yellowgreen"><i class="fa fa-wrench" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title4" style="background-color: yellowgreen">Thiết bị đang sửa chữa<i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg4" style="background-color: rgb(100, 91, 91)"><i class="fa fa-flag-o" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title4" style="background-color: rgb(82, 76, 76)">Thiết bị ngưng dùng<i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <span class="dash-widget-bg4" style="background-color: black"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
+                    <div class="dash-widget-info text-right">
+                        <h3></h3>
+                        <span class="widget-title4" style="background-color: black">Thiết bị thanh lý <i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
-
-

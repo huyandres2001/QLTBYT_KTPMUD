@@ -1,42 +1,5 @@
 @extends('user.user_master')
-
-@section('user')
-
-{{-- <div class="row" style="padding: 20px;">
-    <div class="col-md-6">
-        <h3>Change Password</h3>
-        <form method="post" action="{{ route('user.password.update') }}">
-            @csrf
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">User Name</label>
-                <input type="text" name="name" class="form-control" placeholder="{{ $user->HoVaTen }}" disabled
-                    readonly>
-                <!---->
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="{{ $user->Email }}" disabled
-                    readonly>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Current Password</label>
-                <input type="password" name="current_password" id="current_password" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">New Password</label>
-                <input type="password" name="password" id="password" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Update Password</button>
-        </form>
-    </div>
-</div> --}}
-
-
-
+@section('content')
 <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
 <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.30166" type="text/javascript"></script>
 <script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.30166" type="text/javascript"></script>
@@ -267,7 +230,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
     /* Injected CSS Code */
 </style>
 
-<form class="jotform-form" action="{{ route('user.password.update') }}" method="post" name="form_220092097471454"
+<form class="jotform-form" action="/thietbi/postthanhly/{{$ThietBi->id}}" method="post" name="form_220092097471454"
     id="220092097471454" accept-charset="utf-8" autocomplete="on">
     @csrf
     <div role="main" class="form-all">
@@ -281,68 +244,72 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div class="form-header-group  header-large">
                     <div class="header-text httal htvam">
                         <h1 id="header_40" class="form-header" data-component="header">
-                            Đổi mật khẩu
+                            Thanh Lý thiết bị
                         </h1>
                     </div>
                 </div>
             </li>
             <li class="form-line fixed-width" data-type="control_textbox" id="id_42">
-                <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Họ và tên
+                <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Tên thiết bị
                 </label>
                 <div id="cid_42" class="form-input-wide" data-layout="half">
                     <input type="text" id="input_42" data-type="input-textbox" class="form-readonly form-textbox"
-                        data-defaultvalue="" style="width:790px" size="790" value="{{$user->HoVaTen}}"
-                        tabindex="-1" data-component="textbox" aria-labelledby="label_42" disabled readonly />
+                        data-defaultvalue="" style="width:790px" size="790" value="{{$ThietBi->TenThietBi}}"
+                        tabindex="-1" data-component="textbox" aria-labelledby="label_42" readonly="" />
                 </div>
             </li>
-
-            <li class="form-line fixed-width" data-type="control_textbox" id="id_42">
-                <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Email
-                </label>
-                <div id="cid_42" class="form-input-wide" data-layout="half">
-                    <input type="text" id="input_42" data-type="input-textbox" class="form-readonly form-textbox"
-                        data-defaultvalue="" style="width:790px" size="790" value="{{$user->Email}}"
-                        tabindex="-1" data-component="textbox" aria-labelledby="label_42" disabled readonly />
+            <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_44">
+                <label class="form-label form-label-top form-label-auto" id="label_44" for="input_44"> Model </label>
+                <div id="cid_44" class="form-input-wide" data-layout="half">
+                    <input type="text" id="input_44" name="q44_tenVt" data-type="input-textbox"
+                        class="form-readonly form-textbox" data-defaultvalue="" style="width:433px" size="433"
+                        value="{{$ThietBi->Model}}" tabindex="-1" data-component="textbox" aria-labelledby="label_44"
+                        readonly="" />
                 </div>
             </li>
-
-            <li class="form-line fixed-width" data-type="control_textbox" id="id_42">
-                <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Mật khẩu cũ
-                </label>
-                <div id="cid_42" class="form-input-wide" data-layout="half">
-                    <input type="password" id="input_42" name="current_password" data-type="input-textbox" class="form-readonly form-textbox"
-                        data-defaultvalue="" style="width:790px" size="790" name
-                        tabindex="-1" data-component="textbox" aria-labelledby="label_42"  />
+            <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_45">
+                <label class="form-label form-label-top form-label-auto" id="label_45" for="input_45"> Serial </label>
+                <div id="cid_45" class="form-input-wide" data-layout="half">
+                    <input type="text" id="input_45" name="q45_model" data-type="input-textbox"
+                        class="form-readonly form-textbox" data-defaultvalue="" style="width:433px" size="433"
+                        value="{{$ThietBi->Serial}}" tabindex="-1" data-component="textbox" aria-labelledby="label_45"
+                        readonly="" />
                 </div>
             </li>
-
-            <li class="form-line fixed-width" data-type="control_textbox" id="id_42">
-                <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Mật khẩu mới
-                </label>
-                <div id="cid_42" class="form-input-wide" data-layout="half">
-                    <input type="password" id="input_42" name="password" data-type="input-textbox" class="form-readonly form-textbox"
-                        data-defaultvalue="" style="width:790px" size="790" 
-                        tabindex="-1" data-component="textbox" aria-labelledby="label_42" />
+            
+            
+            <li class="form-line form-line-column form-col-6" data-type="control_textarea" id="id_51">
+                <label class="form-label form-label-top form-label-auto" id="label_51" for="input_51"> Ghi chú </label>
+                <div id="cid_51" class="form-input-wide" data-layout="full">
+                    <textarea id="input_51" class="form-textarea" name="GhiChu" style="width:648px;height:163px"
+                        data-component="textarea" aria-labelledby="label_51"></textarea>
                 </div>
             </li>
-
-            <li class="form-line fixed-width" data-type="control_textbox" id="id_42">
-                <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Xác nhận mật khẩu mới
-                </label>
-                <div id="cid_42" class="form-input-wide" data-layout="half">
-                    <input type="password" name="password_confirmation" id="input_42" data-type="input-textbox" class="form-readonly form-textbox"
-                        data-defaultvalue="" style="width:790px" size="790" 
-                        tabindex="-1" data-component="textbox" aria-labelledby="label_42"  />
+            <li class="form-line form-line-column form-col-7" data-type="control_datetime" id="id_50">
+                <label class="form-label form-label-top" id="label_50" for="lite_mode_50"> Ngày thanh lý </label>
+                <div id="cid_50" class="form-input-wide" data-layout="half">
+                    <div data-wrapper-react="true">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                            <input name="NgayThanhLy" type="date" class="form-textbox validate[limitDate, validateLiteDate]"
+                                id="lite_mode_50" size="12" data-maxlength="12" maxLength="12" data-age=""
+                                value="{{old('NgayThanhLy')}}" data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY"
+                                autoComplete="section-input_50 off" aria-labelledby="label_50" />
+                            <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick"
+                                src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime"
+                                aria-hidden="true" data-allow-time="No" data-version="v2" />
+                            <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode"
+                                style="min-height:13px" aria-hidden="false"> </label>
+                        </span>
+                    </div>
                 </div>
             </li>
-
             <li class="form-line" data-type="control_button" id="id_43">
                 <div id="cid_43" class="form-input-wide" data-layout="full">
                     <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
                         <button style="background-color:#036df8;" id="input_43" type="submit"
                             class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
                             data-component="button" data-content="">
-                            Đổi mật khẩu
+                            Thanh lý
                         </button>
                     </div>
                 </div>
@@ -373,6 +340,4 @@ for (var i = 0; i < all_spc.length; i++)
 </form>
 <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.30166"></script>
 <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.30166"></script>
-
-
 @endsection

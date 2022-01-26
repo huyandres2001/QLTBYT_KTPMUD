@@ -7,6 +7,9 @@
 
 
 <section class="table_area">
+    <br>
+    <h1 style="text-align:center">TỔNG SỐ THIẾT BỊ: {{$Count}}</h1>
+    <br>
     <div class="panel">
         <div class="panel_header">
             <div class="panel_title" style="text-align:center"><span>Danh Sách Thiết Bị</span></div>
@@ -19,7 +22,6 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên Thiết Bị</th>
-                            <th>Mã Thiết Bị</th>
                             <th>Model</th>
                             <th>Serial</th>
                             <th>Tình Trạng</th>
@@ -35,8 +37,6 @@
                         <tr>
                             <td>{{ $i++ }}</td>
                             <td>{{ $ThietBi->TenThietBi }}</td>
-
-                            <td>{{ $ThietBi->idThietBi }}</td>
 
                             <td>{{ $ThietBi->Model }}</td>
 
@@ -73,7 +73,16 @@
                                         style="font-size: 15px; color:#1ebb33;" title="Bàn giao thiết bị"
                                         aria-hidden="true"></i></a>
                                 @endif
-
+                                @if ($ThietBi->TinhTrang == 'Đang Sử Dụng')
+                                <a href="/thietbi/getbaohong/{{$ThietBi->id}}" ><i class="fas fa-exclamation-triangle"
+                                        style="font-size: 15px; color:#ff0000;" title="Báo hỏng thiết bị"
+                                        aria-hidden="true"></i></a>
+                                @endif
+                                @if ($ThietBi->TinhTrang == 'Ngừng Sử Dụng')
+                                <a href="/thietbi/getthanhly/{{$ThietBi->id}}" ><i class="fas fa-handshake"
+                                        style="font-size: 15px; color:#000000;" title="Thanh lý thiết bị"
+                                        aria-hidden="true"></i></a>
+                                @endif
                                 <a href="/thietbi/xem/{{$ThietBi->id}}"><i class="fa fa-eye"
                                         style="font-size: 15px;color:#00cbfd" title="Xem hồ sơ thiết bị"
                                         aria-hidden="true"></i></a>

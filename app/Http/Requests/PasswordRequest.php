@@ -4,7 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-class ThietBiRequest extends FormRequest
+
+class PasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,20 +26,17 @@ class ThietBiRequest extends FormRequest
     {
         return [
             //
-            'TenThietBi' => 'required',
-            'Serial' => 'required',
-            'Model' => 'required',
-            'SoLuong' => 'required',
+            'current_password' => 'required',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required'
         ];
     }
     public function messages()
     {
         return [
-            'TenThietBi.required' => 'Bạn chưa nhập tên thiết bị',
-            'Serial.required' => 'Bạn chưa nhập serial',
-            'Model.required' => 'Bạn chưa nhập model',
-            'SoLuong.required' => 'Bạn chưa nhập model',
-            'Serial.unique' => 'Serial đã tồn tại',
+            'current_password.required' => 'Bạn chưa nhập mật khẩu',
+            'password.required' => 'Bạn chưa nhập mật khẩu mới',
+            'password_confirmation.required' => 'Bạn chưa xác nhận mật khẩu'
         ];
     }
 }

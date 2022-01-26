@@ -44,6 +44,8 @@ class CreateThietbiTable extends Migration
             $table->integer('KhauHaoHangNam')->nullable();
             $table->integer('GiaTriHienTai')->nullable();
             $table->integer('NamSuDung')->nullable();
+            $table->longText('GhiChu')->nullable();
+            $table->date('NgayThanhLy')->nullable();
             $table->timestamps();
         });
     }

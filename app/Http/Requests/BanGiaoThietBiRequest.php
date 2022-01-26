@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-class ThietBiRequest extends FormRequest
+class BanGiaoThietBiRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,20 +25,17 @@ class ThietBiRequest extends FormRequest
     {
         return [
             //
-            'TenThietBi' => 'required',
-            'Serial' => 'required',
-            'Model' => 'required',
-            'SoLuong' => 'required',
+            'idKhoaPhongSuDung' => 'required',
+            'idCanBoKhoaPhongPhuTrach' => 'required',
+            'NgayBanGiao' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'TenThietBi.required' => 'Bạn chưa nhập tên thiết bị',
-            'Serial.required' => 'Bạn chưa nhập serial',
-            'Model.required' => 'Bạn chưa nhập model',
-            'SoLuong.required' => 'Bạn chưa nhập model',
-            'Serial.unique' => 'Serial đã tồn tại',
+            'idKhoaPhongSuDung.required' => 'Bạn chưa chọn khoa phòng sử dụng',
+            'idCanBoKhoaPhongPhuTrach.required' => 'Bạn chưa chọn cán bộ phụ trách',
+            'NgayBanGiao.required' => 'Bạn chưa chọn ngày bàn giao'
         ];
     }
 }

@@ -16,7 +16,7 @@
                     <li><a href="{{route('thietbi.danhsach')}}">Danh sách thiết bị</a></li>
                     <li><a href="{{route('thietbi.getthem')}}">Thêm mới thiết bị</a></li>
                 </ul>
-            </li>
+            {{-- </li>
             <li class="single-nav-wrapper">
                 <a class="has-arrow menu-item" href="#" aria-expanded="false">
                     <span class="left-icon"><i class="fas fa-table"></i></span>
@@ -116,7 +116,7 @@
                     <span class="left-icon"><i class="fas fa-file"></i></span>
                     <span class="menu-text">Blank Page</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </aside>

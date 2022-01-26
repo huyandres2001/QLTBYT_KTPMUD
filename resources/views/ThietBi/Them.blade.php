@@ -304,11 +304,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
         </div>
     </li>
 </form>
-@foreach ($errors->all() as $error)
-<script>
-    toastr.error("{{ $error }}");
-</script>
-@endforeach
+
 
 <form class="jotform-form" action="{{route('thietbi.postthem')}}" method="post" enctype="multipart/form-data"
     name="form_220091442781451" id="220091442781451" accept-charset="utf-8" autocomplete="on">
@@ -781,12 +777,12 @@ for (var i = 0; i < all_spc.length; i++)
 <script>
     $(document).ready(function () {
                 $('#idNhomThietBi').on('change', function () {
-                let id = $(this).val();
+                let idLTB = $(this).val();
                 $('#idLoaiThietBi').empty();
                 $('#idLoaiThietBi').append(`<option value="" >Chọn loại thiết bị</option>`);
                 $.ajax({
                 type: 'GET',
-                url: 'thietbi/layloaithietbitunhomthietbi/'+ id,
+                url: 'thietbi/layloaithietbitunhomthietbi/'+ idLTB,
                 success: function (response) {
                 var response = JSON.parse(response);
                 console.log(response);   

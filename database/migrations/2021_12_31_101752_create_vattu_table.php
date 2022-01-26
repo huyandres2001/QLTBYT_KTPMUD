@@ -34,7 +34,6 @@ class CreateVattuTable extends Migration
             $table->string('ThongSoKyThuat')->nullable();
             $table->string('CauHinhKyThuat')->nullable();
             $table->string('QuyTrinhSuDung')->nullable();
-            $table->date('NgayNhap')->nullable();
             $table->string('GhiChu')->nullable();
             $table->timestamps();
         });

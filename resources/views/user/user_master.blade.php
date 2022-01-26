@@ -36,9 +36,17 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+
 </head>
 
 <body id="page-top">
+
+    {{-- Display error messages --}}
+    @foreach ($errors->all() as $error)
+    <script>
+        toastr.error("{{ $error }}");
+    </script>
+    @endforeach
     <!-- preloader -->
     <div class="preloader">
         <img src="{{ asset('UserBackend/panel/assets/images/preloader.gif') }}" alt="">
@@ -126,7 +134,7 @@
         @endif
     </script>
 
-
+    @yield('script')
 
 </body>
 

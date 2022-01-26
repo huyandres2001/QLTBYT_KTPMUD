@@ -15,8 +15,8 @@ class KhoaPhongSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('department')->delete();
-        DB::table('department')->insert([
+        DB::table('khoaphong')->delete();
+        DB::table('khoaphong')->insert([
             [
                 'idKhoaPhong' => 'Khoa Ngoại Chỉnh Hình',
                 'TenKhoaPhong' => 'Khoa Ngoại Chỉnh Hình',

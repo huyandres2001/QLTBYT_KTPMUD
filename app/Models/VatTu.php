@@ -14,7 +14,7 @@ class VatTu extends Model
          'TrangThai', 'SerialThietBiTuongUng', 'GiaNhap', 'HangSanXuat', 
          'XuatXu', 'idNhaCungCap', 'Serial', 'Model', 'NamSanXuat', 
          'NamSuDung', 'NgayNhapKho', 'HanSuDung', 'ThongSoKyThuat', 
-         'CauHinhKyThuat', 'QuyTrinhSuDung', 'NgayNhap', 
+         'CauHinhKyThuat', 'QuyTrinhSuDung',  
          'GhiChu', 
     ];
     public function ThietBiTuongUng(Type $var = null)

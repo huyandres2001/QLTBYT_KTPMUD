@@ -17,7 +17,7 @@ class ThietBi extends Model
         'idDonViBaoTri','HangSanXuat', 'GiaNhap',
         'XuatXu','NamSanXuat','KiemDinhDinhKy','NgayKiemDinhGanNhat',
         'NgayNhapKho','NgayHetHanBaoHanh','ThongSoKyThuat','CauHinhKyThuat','GiaTriBanDau',
-        'KhauHaoHangNam','GiaTriHienTai','NamSuDung', 'NgayBanGiao'
+        'KhauHaoHangNam','GiaTriHienTai','NamSuDung', 'NgayBanGiao', 'GhiChu', 'NgayThanhLy'
     ];
     public function LoaiThietBi()
     {

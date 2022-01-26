@@ -30,14 +30,14 @@ class UserSeeder extends Seeder
                 'GioiTinh' => 'Nam',
                 'SoDienThoai' => '0886152192',
                 'email_verified_at' => now(),
-                'password' => Hash::make('111111111'), // password
+                'password' => Hash::make('111'), // password
                 'remember_token' => Str::random(10),
             ],
             [
                 'HoVaTen' => 'Người dùng test',
                 'Email' => 'test@gmail.com',
                 'PhanQuyen' => 'Cán bộ khoa phòng',
-                'idNguoiDung' => '20192914',
+                'idNguoiDung' => '20192915',
                 'idKhoaPhong' => 'Admin',
                 'NgaySinh' => '28/12/2001',
                 'DiaChi' => 'HaTay',
