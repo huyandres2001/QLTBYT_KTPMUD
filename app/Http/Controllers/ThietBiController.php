@@ -14,6 +14,8 @@ use App\Http\Requests\ThietBiRequest;
 use App\Models\DonViBaoTri;
 use App\Models\NhaCungCap;
 use App\Http\Requests\BanGiaoThietBiRequest;
+use App\Models\BaoHong;
+use App\Http\Requests\BaoHongRequest;
 
 class ThietBiController extends Controller
 {
@@ -22,6 +24,7 @@ class ThietBiController extends Controller
         ThietBi $ThietBi,
         NhomThietBi $NhomThietBi,
         LoaiThietBi $LoaiThietBi,
+        BaoHong $BaoHong,
         //KhoaPhong $KhoaPhong,
         //NhaCungCap $NhaCungCap,
         //DonViBaoTri $DonViBaoTri,
@@ -33,8 +36,8 @@ class ThietBiController extends Controller
         //$this->KhoaPhong = $KhoaPhong;
         //$this->NhaCungCap = $NhaCungCap;
         //$this->DonViBaoTri = $DonViBaoTri;
-        
-        
+
+
     }
     public function DanhSach()
     {
@@ -47,8 +50,7 @@ class ThietBiController extends Controller
     }
     public function GetThem()
     {
-        if(Auth::user()->PhanQuyen == 'Cán bộ khoa phòng')
-        {
+        if (Auth::user()->PhanQuyen == 'Cán bộ khoa phòng') {
             return back()->with('warning', 'Bạn không có quyền thực hiện chức năng này!');
         }
         $data['user'] = User::find(Auth::user()->id);
@@ -66,8 +68,22 @@ class ThietBiController extends Controller
         echo json_encode(DB::table('loaithietbi')->where('idNhomThietBi', $idLTB)->get());
     }
     public function PostThem(ThietBiRequest $request)
-    {   
-        $this->ThietBi->create($request->all());
+    {
+        // $this->ThietBi->create($request->all());
+        // $ThietBi = DB::table('thietbi')->insert($request->all());
+        $ThietBi = array();
+        $ThietBi = $request->except('_token');
+        $image = $request->file('AnhMinhHoa');
+        if ($image) {
+            $image_name = date('dmy_H_s_i');
+            $ext = strtolower($image->getClientOriginalExtension());
+            $image_full_name = $image_name . '.' . $ext;
+            $upload_path = 'public/upload/ThietBi/';
+            $img_url = $upload_path . $image_full_name;
+            $image->move($upload_path, $image_full_name);
+            $ThietBi['AnhMinhHoa'] = $img_url;
+        }
+        DB::table('thietbi')->insert($ThietBi);
         return redirect()->route('thietbi.danhsach')->with('message', 'Thêm thiết bị thành công!');
     }
     public function Xoa($id)
@@ -77,10 +93,10 @@ class ThietBiController extends Controller
     }
     public function GetSua($id)
     {
-        if(Auth::user()->PhanQuyen == 'Cán bộ khoa phòng')
-        {
+        if (Auth::user()->PhanQuyen == 'Cán bộ khoa phòng') {
             return back()->with('warning', 'Bạn không có quyền thực hiện chức năng này!');
         }
+
         $data['user'] = User::find(Auth::user()->id);
         $data['ThietBi'] = ThietBi::find($id);
         $data['DSNhomThietBi'] = NhomThietBi::all();
@@ -92,30 +108,43 @@ class ThietBiController extends Controller
         $data['DSNhaCungCap'] = NhaCungCap::orderBy('TenNhaCungCap')->get();
         return view('ThietBi.Sua', $data);
     }
-    public function PostSua(Request $request, $id)
+    public function PostSua(ThietBiRequest $request, $id)
     {
-        $ThietBi = ThietBi::where('Serial', $request->Serial)->get();
-        if($ThietBi)
-        {
-            if($ThietBi[0]->id != $id)
-            {
-                return back()->with('error','Serial đã tồn tại');
+        $ThietBi = ThietBi::where('Serial', $request->Serial)->get()->first();
+        if ($ThietBi) {
+            if ($ThietBi->id != $id) {
+                $request->validate(
+                    $request,
+                    ['Serial' => 'unique:thietbi,Serial'],
+                    ['Serial.unique' => 'Serial đã tồn tại']
+                );
             }
         }
-        $data = ThietBi::find($id);
-        $data->update($request->all());
+        $ThietBi->update($request->except('_token'));
+        $image = $request->file('AnhMinhHoa');
+        if ($image) {
+            $image_name = date('dmy_H_s_i');
+            $ext = strtolower($image->getClientOriginalExtension());
+            $image_full_name = $image_name . '.' . $ext;
+            $upload_path = 'public/upload/ThietBi/';
+            $img_url = $upload_path . $image_full_name;
+            $image->move($upload_path, $image_full_name);
+            $ThietBi->AnhMinhHoa = $img_url;
+        }
+        $ThietBi->save();
+        // $data = ThietBi::find($id);
+        // $data->update($request->all());
         return redirect('/thietbi/danhsach')->with('message', 'Chỉnh sửa thành công');
     }
     public function Xem($id)
     {
         $data['ThietBi'] = ThietBi::find($id);
         $data['user'] = User::find(Auth::user()->id);
-        return view('ThietBi.Xem' , $data);
+        return view('ThietBi.Xem', $data);
     }
     public function GetBanGiao($id)
     {
-        if(Auth::user()->PhanQuyen == 'Cán bộ khoa phòng')
-        {
+        if (Auth::user()->PhanQuyen == 'Cán bộ khoa phòng') {
             return back()->with('warning', 'Bạn không có quyền thực hiện chức năng này!');
         }
         $data['ThietBi'] = ThietBi::find($id);
@@ -127,8 +156,7 @@ class ThietBiController extends Controller
     }
     public function PostBanGiao(BanGiaoThietBiRequest $request, $id)
     {
-        if(Auth::user()->PhanQuyen == 'Cán bộ khoa phòng')
-        {
+        if (Auth::user()->PhanQuyen == 'Cán bộ khoa phòng') {
             return back()->with('warning', 'Bạn không có quyền thực hiện chức năng này!');
         }
         $ThietBi = ThietBi::find($id);
@@ -143,11 +171,11 @@ class ThietBiController extends Controller
     public function GetThanhLy($id)
     {
         # code...
-        $data['user']= User::find(Auth::user()->id);
+        $data['user'] = User::find(Auth::user()->id);
         $data['ThietBi'] = ThietBi::find($id);
         return view('ThietBi.ThanhLy', $data);
     }
-    public function PostThanhLy(Request $request, $id) 
+    public function PostThanhLy(Request $request, $id)
     {
         # code...
         $ThietBi = ThietBi::find($id);
@@ -155,6 +183,27 @@ class ThietBiController extends Controller
         $ThietBi->NgayThanhLy = $request->NgayThanhLy;
         $ThietBi->GhiChu = $ThietBi->GhiChu . '\n' . $request->GhiChu;
         $ThietBi->save();
-        return redirect('/thietbi/danhsach')->with('message','Thanh lý thiết bị thành công');
+        return redirect('/thietbi/danhsach')->with('message', 'Thanh lý thiết bị thành công');
+    }
+    public function GetBaoHong($id)
+    {
+        # code...
+        $data['ThietBi'] = ThietBi::find($id);
+        $data['user'] = User::find(Auth::user()->id);
+        return view('ThietBi.BaoHong', $data);
+    }
+    public function PostBaoHong(BaoHongRequest $request, $id)
+    {
+        # code...
+        $BaoHong['SerialThietBiHong'] = $request->SerialThietBiHong;
+        $BaoHong['idNguoiBaoHong'] = $request->idNguoiBaoHong;
+        $BaoHong['LyDoHong'] = $request->LyDoHong;
+        $BaoHong['NgayBaoHong'] = $request->NgayBaoHong;
+
+        $BaoHong = DB::table('baohong')->insert($BaoHong);
+        $ThietBi = ThietBi::find($id);
+        $ThietBi->TinhTrang = "Đang Báo Hỏng";
+        $ThietBi->save();
+        return redirect('/thietbi/danhsach')->with('warning', 'Đã báo hỏng thiết bị');
     }
 }

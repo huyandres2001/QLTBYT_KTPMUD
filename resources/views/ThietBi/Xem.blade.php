@@ -323,7 +323,15 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     </div>
                 </div>
             </li>
-
+            <li class="form-line form-line-column form-col-8" data-type="control_image" id="id_105">
+                <div id="cid_105" class="form-input-wide" data-layout="full">
+                    <div style="text-align:center">
+                        <img alt="" class="form-image" style="border:0"
+                            src="{{ empty($ThietBi->AnhMinhHoa) ? url('upload/no_image.jpg') : url( $ThietBi->AnhMinhHoa) }}"
+                            height="200px" width="199px" data-component="image" />
+                    </div>
+                </div>
+            </li>
             <li class="form-line fixed-width jf-required" data-type="control_textbox" id="id_42">
                 <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42">
                     Tên thiết bị
@@ -348,7 +356,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_43" class="form-input-wide jf-required" data-layout="half">
                     <input disabled readonly type="text" id="input_43" name="Model" data-type="input-textbox"
                         class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->Model}}" placeholder="Model..." data-component="textbox"
+                        value="{{$ThietBi->Model}}"  data-component="textbox"
                         aria-labelledby="label_43" required="" />
                 </div>
             </li>
@@ -362,7 +370,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_44" class="form-input-wide jf-required" data-layout="half">
                     <input disabled readonly type="text" id="input_44" name="Serial" data-type="input-textbox"
                         class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->Serial}}" placeholder="Serial" data-component="textbox"
+                        value="{{$ThietBi->Serial}}"   data-component="textbox"
                         aria-labelledby="label_44" required="" />
                 </div>
             </li>
@@ -376,7 +384,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_45" class="form-input-wide jf-required" data-layout="half">
                     <input disabled readonly type="text" id="input_45" name="SoLuong" data-type="input-textbox"
                         class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->SoLuong}}" placeholder="Số lượng..." data-component="textbox"
+                        value="{{$ThietBi->SoLuong}}"   data-component="textbox"
                         aria-labelledby="label_45" required="" />
                 </div>
             </li>
@@ -386,7 +394,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_46" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="text" id="input_46" name="DonViTinh" data-type="input-textbox"
                         class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->DonVi}}" placeholder="Đơn vị..." data-component="textbox"
+                        value="{{$ThietBi->DonVi}}"   data-component="textbox"
                         aria-labelledby="label_46" />
                 </div>
             </li>
@@ -432,7 +440,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_51" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="text" id="input_51" name="idNhaCungCap" data-type="input-textbox"
                         class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->idNhaCungCap}}" placeholder="Nhà cung cấp..." data-component="textbox"
+                        value="{{$ThietBi->idNhaCungCap}}"   data-component="textbox"
                         aria-labelledby="label_51" />
                 </div>
             </li>
@@ -442,7 +450,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_52" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="text" id="input_52" name="HangSanXuat" data-type="input-textbox"
                         class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->HangSanXuat}}" placeholder="Hãng sản xuất..." data-component="textbox"
+                        value="{{$ThietBi->HangSanXuat}}"  data-component="textbox"
                         aria-labelledby="label_52" />
                 </div>
             </li>
@@ -451,7 +459,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_53" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="text" id="input_53" name="XuatXu" data-type="input-textbox"
                         class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->XuatXu}}" placeholder="Xuất xứ..." data-component="textbox"
+                        value="{{$ThietBi->XuatXu}}"  data-component="textbox"
                         aria-labelledby="label_53" />
                 </div>
             </li>
@@ -461,7 +469,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_57" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="number" id="input_57" name="NamSanXuat" data-type="input-number"
                         class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->NamSanXuat}}" placeholder="yyyy" data-numbermin="1900" data-numbermax="2100"
+                        value="{{$ThietBi->NamSanXuat}}"   data-numbermin="1900" data-numbermax="2100"
                         data-component="number" aria-labelledby="label_57" step="any" />
                 </div>
             </li>
@@ -470,7 +478,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_59" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="text" id="input_59" name="GiaNhap" data-type="input-textbox"
                         class="form-textbox validate[Numeric]" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->GiaNhap}}" placeholder="VNĐ" data-component="textbox"
+                        value="{{$ThietBi->GiaNhap}}"  data-component="textbox"
                         aria-labelledby="label_59" />
                 </div>
             </li>
@@ -516,7 +524,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input disabled readonly type="date" name="NgayNhapKho"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_64" size="12"
                                 data-maxlength="12" maxLength="12" data-age="" value="{{$ThietBi->NgayNhapKho}}"
-                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                data-format="mmddyyyy" data-seperator="/"  
                                 autoComplete="section-input_64 off" aria-labelledby="label_64" />
                             <img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date"
                                 id="input_64_pick" src="https://cdn.jotfor.ms/images/calendar.png"
@@ -552,7 +560,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_65" size="12"
                                 name="NgayKiemDinhGanNhat" data-maxlength="12" maxLength="12" data-age=""
                                 value="{{$ThietBi->NgayKiemDinhGanNhat}}" data-format="mmddyyyy" data-seperator="/"
-                                placeholder="MM/DD/YYYY" autoComplete="section-input_65 off"
+                                  autoComplete="section-input_65 off"
                                 aria-labelledby="label_65" />
                             <img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date"
                                 id="input_65_pick" src="https://cdn.jotfor.ms/images/calendar.png"
@@ -573,7 +581,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input disabled readonly type="date" name="NgayHetHanBaoHanh"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_66" size="12"
                                 data-maxlength="12" maxLength="12" data-age="" value="{{$ThietBi->NgayHetHanBaoHanh}}"
-                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                data-format="mmddyyyy" data-seperator="/"  
                                 autoComplete="section-input_66 off" aria-labelledby="label_66" />
                             <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_66_pick"
                                 src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime"
@@ -651,7 +659,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_89" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="number" id="input_89" name="NamSuDung" data-type="input-number"
                         class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->NamSuDung}}" placeholder="yyyy" data-numbermin="1900" data-numbermax="2100"
+                        value="{{$ThietBi->NamSuDung}}"   data-numbermin="1900" data-numbermax="2100"
                         data-component="number" aria-labelledby="label_89" step="any" />
                 </div>
             </li>
@@ -665,7 +673,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input disabled readonly type="date" name="NgayBanGiao"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_86" size="12"
                                 data-maxlength="12" maxLength="12" data-age="" value="{{$ThietBi->NgayBanGiao}}"
-                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                data-format="mmddyyyy" data-seperator="/"  
                                 autoComplete="section-input_86 off" aria-labelledby="label_86" />
                             <img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date"
                                 id="input_86_pick" src="https://cdn.jotfor.ms/images/calendar.png"
@@ -682,7 +690,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_77" class="form-input-wide" data-layout="half">
                     <input disabled readonly type="text" id="input_77" name="idDonViBaoTri" data-type="input-textbox"
                         class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                        value="{{$ThietBi->idDonViBaoTri}}" placeholder="Đơn vị bảo trì..." data-component="textbox"
+                        value="{{$ThietBi->idDonViBaoTri}}"  data-component="textbox"
                         aria-labelledby="label_77" />
                 </div>
             </li>

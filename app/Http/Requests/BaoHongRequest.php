@@ -4,7 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-class ThietBiRequest extends FormRequest
+
+class BaoHongRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,13 +26,15 @@ class ThietBiRequest extends FormRequest
     {
         return [
             //
-            'Serial' => 'unique:thietbi,Serial',
+            'NgayBaoHong' => 'required',
+            'LyDoHong' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'Serial.unique' => 'Serial đã tồn tại',
+            'NgayBaoHong.required' => 'Bạn chưa nhập ngày báo hỏng',
+            'LyDoHong.required' => 'Bạn chưa nhập lý do hỏng',
         ];
     }
 }

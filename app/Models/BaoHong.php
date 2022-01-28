@@ -10,7 +10,7 @@ class BaoHong extends Model
     use HasFactory;
     protected $table = 'baohong';
     protected $fillable = [
-        'idNguoiBaoHong', 'idThietBiHong', 
+        'idNguoiBaoHong', 'SerialThietBiHong', 
         'LyDo', 'NgayBaoHong'
     ];
     public function ThietBiHong()

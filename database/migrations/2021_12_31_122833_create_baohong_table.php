@@ -16,7 +16,7 @@ class CreateBaohongTable extends Migration
         Schema::create('baohong', function (Blueprint $table) {
             $table->id();
             $table->string('idNguoiBaoHong');
-            $table->string('idThietBiHong');
+            $table->string('SerialThietBiHong');
             $table->string('LyDo');
             $table->date('NgayBaoHong');
             $table->timestamps();

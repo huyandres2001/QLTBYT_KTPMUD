@@ -230,7 +230,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
     /* Injected CSS Code */
 </style>
 
-<form class="jotform-form" action="/thietbi/postbangiao/{{$ThietBi->id}}" method="post" name="form_220092097471454"
+<form class="jotform-form" action="/thietbi/postbaohong/{{$ThietBi->id}}" method="post" name="form_220092097471454"
     id="220092097471454" accept-charset="utf-8" autocomplete="on">
     @csrf
     <div role="main" class="form-all">
@@ -244,7 +244,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div class="form-header-group  header-large">
                     <div class="header-text httal htvam">
                         <h1 id="header_40" class="form-header" data-component="header">
-                            Bàn giao thiết bị
+                            Báo hỏng thiết bị
                         </h1>
                     </div>
                 </div>
@@ -253,16 +253,16 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <label class="form-label form-label-top form-label-auto" id="label_42" for="input_42"> Tên thiết bị
                 </label>
                 <div id="cid_42" class="form-input-wide" data-layout="half">
-                    <input type="text" id="input_42" data-type="input-textbox" class="form-readonly form-textbox"
-                        data-defaultvalue="" style="width:790px" size="790" value="{{$ThietBi->TenThietBi}}"
+                    <input type="text" id="input_42" name="" data-type="input-textbox" class="form-readonly form-textbox"
+                         style="width:790px" size="790" value="{{$ThietBi->TenThietBi}}"
                         tabindex="-1" data-component="textbox" aria-labelledby="label_42" readonly="" />
                 </div>
             </li>
             <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_44">
                 <label class="form-label form-label-top form-label-auto" id="label_44" for="input_44"> Model </label>
                 <div id="cid_44" class="form-input-wide" data-layout="half">
-                    <input type="text" id="input_44" name="q44_tenVt" data-type="input-textbox"
-                        class="form-readonly form-textbox" data-defaultvalue="" style="width:433px" size="433"
+                    <input type="text" id="input_44" name="Model" data-type="input-textbox"
+                        class="form-readonly form-textbox" style="width:433px" size="433"
                         value="{{$ThietBi->Model}}" tabindex="-1" data-component="textbox" aria-labelledby="label_44"
                         readonly="" />
                 </div>
@@ -270,74 +270,53 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
             <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_45">
                 <label class="form-label form-label-top form-label-auto" id="label_45" for="input_45"> Serial </label>
                 <div id="cid_45" class="form-input-wide" data-layout="half">
-                    <input type="text" id="input_45" name="q45_model" data-type="input-textbox"
-                        class="form-readonly form-textbox" data-defaultvalue="" style="width:433px" size="433"
+                    <input type="text" id="input_45" name="SerialThietBiHong" data-type="input-textbox"
+                        class="form-readonly form-textbox"  style="width:433px" size="433"
                         value="{{$ThietBi->Serial}}" tabindex="-1" data-component="textbox" aria-labelledby="label_45"
                         readonly="" />
                 </div>
             </li>
-            <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_47">
-                <label class="form-label form-label-top" id="label_47" for="input_47"> Chọn Khoa Phòng - Ban
-                    <span class="form-required">
-                        *
-                    </span>
-                </label>
-                <div id="cid_47" class="form-input-wide" data-layout="half">
-                    <select name="idKhoaPhongSuDung" class="form-dropdown" style="width:310px;" id="input_47">
-                        {{-- bảng thiết bị liên kết với bảng khoa phòng qua khóa chính: idKhoaPhongSuDung, khóa ngoại:
-                        idKhoaPhong --}}
-                        <option value=""> Chọn Khoa Phòng - Ban... </option>
-                        @foreach ($DSKhoaPhongSuDung as $KhoaPhongSuDung )
-                        <option value="{{$KhoaPhongSuDung->idKhoaPhong}}" {{old('idKhoaPhongSuDung')==$KhoaPhongSuDung->
-                            idKhoaPhong ? 'selected' : ''}}>
-                            {{$KhoaPhongSuDung->TenKhoaPhong}} </option>
-                        @endforeach
-                    </select>
+            <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_45">
+                <label class="form-label form-label-top form-label-auto" id="label_45" for="input_45"> id Người báo hỏng </label>
+                <div id="cid_45" class="form-input-wide" data-layout="half">
+                    <input type="text" id="input_45" name="idNguoiBaoHong" data-type="input-textbox"
+                        class="form-readonly form-textbox" style="width:433px" size="433"
+                        value="{{$user->idNguoiDung}}" tabindex="-1" data-component="textbox" aria-labelledby="label_45"
+                        readonly="" />
                 </div>
             </li>
-            <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_46">
-                <label class="form-label form-label-top" id="label_46" for="input_46"> Chọn cán bộ khoa phòng phụ trách
-                    <span class="form-required">
-                        *
-                    </span>
-                </label>
-                <div id="cid_46" class="form-input-wide" data-layout="half">
-                    {{-- bảng thiết bị liên kết với bảng người dùng qua khóa chính: idCanBoKhoaPhongPhuTrach, khóa
-                    ngoại: idNguoiDung --}}
-                    <select class="form-dropdown" style="width:310px;" id="input_46" name="idCanBoKhoaPhongPhuTrach">
-                        <option value=""> Chọn cán bộ khoa phòng phụ trách... </option>
-                        @foreach ($DSCanBoKhoaPhongPhuTrach as $CanBoKhoaPhongPhuTrach )
-                        <option value="{{$CanBoKhoaPhongPhuTrach->idNguoiDung}}"
-                            {{old('idCanBoKhoaPhongPhuTrach')==$CanBoKhoaPhongPhuTrach->idNguoiDung ? 'selected' : ''}}>
-                            {{$CanBoKhoaPhongPhuTrach->HoVaTen}} </option>
-                        @endforeach
-                    </select>
+            <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_45">
+                <label class="form-label form-label-top form-label-auto" id="label_45" for="input_45"> Người báo hỏng </label>
+                <div id="cid_45" class="form-input-wide" data-layout="half">
+                    <input type="text" id="input_45" name="" data-type="input-textbox"
+                        class="form-readonly form-textbox" style="width:433px" size="433"
+                        value="{{$user->HoVaTen}}" tabindex="-1" data-component="textbox" aria-labelledby="label_45"
+                        readonly="" />
                 </div>
             </li>
             <li class="form-line form-line-column form-col-6" data-type="control_textarea" id="id_51">
-                <label class="form-label form-label-top form-label-auto" id="label_51" for="input_51"> Ghi chú </label>
+                <label class="form-label form-label-top form-label-auto" id="label_51" for="input_51"> Lý do hỏng <span
+                    class="form-required">
+                    *
+                </span> </label>
                 <div id="cid_51" class="form-input-wide" data-layout="full">
-                    <textarea id="input_51" class="form-textarea" name="GhiChu" style="width:648px;height:163px"
+                    <textarea id="input_51" class="form-textarea" name="LyDoHong" style="width:648px;height:163px"
                         data-component="textarea" aria-labelledby="label_51"></textarea>
                 </div>
             </li>
             <li class="form-line form-line-column form-col-7" data-type="control_datetime" id="id_50">
-                <label class="form-label form-label-top" id="label_50" for="lite_mode_50"> Ngày bàn giao <span
-                        class="form-required">
-                        *
-                    </span>
-                </label>
+                <label class="form-label form-label-top" id="label_50" for="lite_mode_50"> Ngày báo hỏng <span
+                    class="form-required">
+                    *
+                </span> </label>
                 <div id="cid_50" class="form-input-wide" data-layout="half">
                     <div data-wrapper-react="true">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input name="NgayBanGiao" type="date"
+                            <input name="NgayBaoHong" type="date"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_50" size="12"
-                                data-maxlength="12" maxLength="12" data-age="" value="{{old('NgayBanGiao')}}"
+                                data-maxlength="12" maxLength="12" data-age="" value="{{old('NgayBaoHong')}}"
                                 data-format="mmddyyyy" data-seperator="-" placeholder="MM-DD-YYYY"
                                 autoComplete="section-input_50 off" aria-labelledby="label_50" />
-                            <img class=" newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_50_pick"
-                                src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime"
-                                aria-hidden="true" data-allow-time="No" data-version="v2" />
                             <label class="form-sub-label is-empty" for="lite_mode_50" id="sublabel_50_litemode"
                                 style="min-height:13px" aria-hidden="false"> </label>
                         </span>
@@ -350,7 +329,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                         <button style="background-color:#036df8;" id="input_43" type="submit"
                             class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
                             data-component="button" data-content="">
-                            Bàn giao
+                            Báo hỏng
                         </button>
                     </div>
                 </div>

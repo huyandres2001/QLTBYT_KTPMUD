@@ -49,6 +49,8 @@ Route::group(['prefix' => 'thietbi'], function () {
     Route::post('/postbangiao/{id}', [ThietbiController::class, 'PostBanGiao']);
     Route::get('/getthanhly/{id}', [ThietbiController::class, 'GetThanhLy']);
     Route::post('/postthanhly/{id}', [ThietBiController::class, 'PostThanhLy']);
+    Route::get('/getbaohong/{id}', [ThietBiController::class, 'GetBaoHong']);
+    Route::post('/postbaohong/{id}', [ThietBiController::class, 'PostBaoHong']);
 });
 
 Route::group(['prefix' => 'ajax'], function () {

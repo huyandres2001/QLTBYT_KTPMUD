@@ -22,6 +22,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên Thiết Bị</th>
+                            <th>Ảnh Minh Họa</th>
                             <th>Model</th>
                             <th>Serial</th>
                             <th>Tình Trạng</th>
@@ -38,6 +39,10 @@
                             <td>{{ $i++ }}</td>
                             <td>{{ $ThietBi->TenThietBi }}</td>
 
+                            <td><img alt="" class="form-image" style="border:0"
+                                src="{{ empty($ThietBi->AnhMinhHoa) ? url('upload/no_image.jpg') : url( $ThietBi->AnhMinhHoa) }}"
+                                height="100px" width="100px" /></td>
+                                
                             <td>{{ $ThietBi->Model }}</td>
 
                             <td>{{ $ThietBi->Serial }}</td>
