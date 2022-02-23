@@ -1,6 +1,5 @@
 @extends('user.user_master')
-
-@section('content')
+@section('header_script')
 <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
 <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.30073" type="text/javascript"></script>
 <script src="https://cdn03.jotfor.ms/js/vendor/imageinfo.js?v=3.3.30073" type="text/javascript"></script>
@@ -18,109 +17,111 @@
    JotForm.setConditions([{"action":[{"field":"31","visibility":"Show","id":"action_1_1641920467418"}],"id":"1641920368876","index":"1","link":"Any","priority":"1","terms":[{"field":"10","operator":"equals","value":"Yes"}],"type":"field"}]);
 	JotForm.init(function(){
 	/*INIT-START*/
-if (window.JotForm && JotForm.accessible) $('input_42').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_42').hint('Tên thiết bị...');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_43').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_43').hint('Model...');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_44').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_44').hint('Serial');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_45').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_45').hint('Số lượng...');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_46').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_46').hint('Đơn vị...');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_51').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_51').hint('Nhà cung cấp...');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_52').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_52').hint('Hãng sản xuất...');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_53').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_53').hint('Xuất xứ...');
-       }, 20);
-      setTimeout(function() {
-          $('input_57').hint('yyyy');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_59').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_59').hint('VNĐ');
-       }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_42').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_42').hint('Tên thiết bị...');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_43').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_43').hint('Model...');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_44').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_44').hint('Serial');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_45').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_45').hint('Số lượng...');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_46').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_46').hint('Đơn vị...');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_51').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_51').hint('Nhà cung cấp...');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_52').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_52').hint('Hãng sản xuất...');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_53').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_53').hint('Xuất xứ...');
+            }, 20);
+            setTimeout(function() {
+                $('input_57').hint('yyyy');
+            }, 20);
+        if (window.JotForm && JotForm.accessible) $('input_59').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_59').hint('VNĐ');
+            }, 20);
 
- JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
- JotForm.calendarOther = {"today":"Today"};
- var languageOptions = document.querySelectorAll('#langList li'); 
- for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
-   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("64", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
- } 
- JotForm.onTranslationsFetch(function() { JotForm.setCalendar("64", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
+        JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+        JotForm.calendarOther = {"today":"Today"};
+        var languageOptions = document.querySelectorAll('#langList li'); 
+        for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+        languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("64", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+        } 
+        JotForm.onTranslationsFetch(function() { JotForm.setCalendar("64", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
 
- JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
- JotForm.calendarOther = {"today":"Today"};
- var languageOptions = document.querySelectorAll('#langList li'); 
- for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
-   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("65", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
- } 
- JotForm.onTranslationsFetch(function() { JotForm.setCalendar("65", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
+        JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+        JotForm.calendarOther = {"today":"Today"};
+        var languageOptions = document.querySelectorAll('#langList li'); 
+        for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+        languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("65", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+        } 
+        JotForm.onTranslationsFetch(function() { JotForm.setCalendar("65", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
 
- JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
- JotForm.calendarOther = {"today":"Today"};
- var languageOptions = document.querySelectorAll('#langList li'); 
- for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
-   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("66", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
- } 
- JotForm.onTranslationsFetch(function() { JotForm.setCalendar("66", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
-if (window.JotForm && JotForm.accessible) $('input_69').setAttribute('tabindex',0);
-      JotForm.setCustomHint( 'input_69', 'Type here...' );
-if (window.JotForm && JotForm.accessible) $('input_70').setAttribute('tabindex',0);
-      JotForm.setCustomHint( 'input_70', 'Type here...' );
-    if(typeof $('input_71').spinner !== 'undefined') {$('input_71').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '310', maxValue:'', minValue:'', allowNegative: false, addAmount: 1, value:'0' });}
-    $('input_71').up(2).setAttribute('tabindex','');
-    if(typeof $('input_72').spinner !== 'undefined') {$('input_72').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '310', maxValue:'', minValue:'', allowNegative: false, addAmount: 1, value:'0' });}
-    $('input_72').up(2).setAttribute('tabindex','');
-    if(typeof $('input_73').spinner !== 'undefined') {$('input_73').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '310', maxValue:'', minValue:'', allowNegative: false, addAmount: 1, value:'0' });}
-    $('input_73').up(2).setAttribute('tabindex','');
-      setTimeout(function() {
-          $('input_89').hint('yyyy');
-       }, 20);
+        JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+        JotForm.calendarOther = {"today":"Today"};
+        var languageOptions = document.querySelectorAll('#langList li'); 
+        for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+        languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("66", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+        } 
+        JotForm.onTranslationsFetch(function() { JotForm.setCalendar("66", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
+        if (window.JotForm && JotForm.accessible) $('input_69').setAttribute('tabindex',0);
+            JotForm.setCustomHint( 'input_69', 'Type here...' );
+        if (window.JotForm && JotForm.accessible) $('input_70').setAttribute('tabindex',0);
+            JotForm.setCustomHint( 'input_70', 'Type here...' );
+            if(typeof $('input_71').spinner !== 'undefined') {$('input_71').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '310', maxValue:'', minValue:'', allowNegative: false, addAmount: 1, value:'0' });}
+            $('input_71').up(2).setAttribute('tabindex','');
+            if(typeof $('input_72').spinner !== 'undefined') {$('input_72').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '310', maxValue:'', minValue:'', allowNegative: false, addAmount: 1, value:'0' });}
+            $('input_72').up(2).setAttribute('tabindex','');
+            if(typeof $('input_73').spinner !== 'undefined') {$('input_73').spinner({ imgPath:'https://cdn.jotfor.ms/images/', width: '310', maxValue:'', minValue:'', allowNegative: false, addAmount: 1, value:'0' });}
+            $('input_73').up(2).setAttribute('tabindex','');
+            setTimeout(function() {
+                $('input_89').hint('yyyy');
+            }, 20);
 
- JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
- JotForm.calendarOther = {"today":"Today"};
- var languageOptions = document.querySelectorAll('#langList li'); 
- for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
-   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("86", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
- } 
- JotForm.onTranslationsFetch(function() { JotForm.setCalendar("86", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
-if (window.JotForm && JotForm.accessible) $('input_77').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_77').hint('Đơn vị bảo trì...');
-       }, 20);
-      setTimeout(function() {
-          JotForm.initMultipleUploads();
-      }, 2);
-	/*INIT-END*/
-	});
+        JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+        JotForm.calendarOther = {"today":"Today"};
+        var languageOptions = document.querySelectorAll('#langList li'); 
+        for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+        languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("86", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+        } 
+        JotForm.onTranslationsFetch(function() { JotForm.setCalendar("86", true, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
+        if (window.JotForm && JotForm.accessible) $('input_77').setAttribute('tabindex',0);
+            setTimeout(function() {
+                $('input_77').hint('Đơn vị bảo trì...');
+            }, 20);
+            setTimeout(function() {
+                JotForm.initMultipleUploads();
+            }, 2);
+            /*INIT-END*/
+            });
 
-   JotForm.prepareCalculationsOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Nhập thiết bi mới","type":"control_head"},null,{"description":"","name":"typeA","qid":"42","subLabel":"","text":"Ten thiết bi","type":"control_textbox"},{"description":"","name":"typeA43","qid":"43","subLabel":"","text":"Model","type":"control_textbox"},{"description":"","name":"model","qid":"44","subLabel":"","text":"Serial","type":"control_textbox"},{"description":"","name":"serial","qid":"45","subLabel":"","text":"Số luợng","type":"control_textbox"},{"description":"","name":"donVi","qid":"46","subLabel":"","text":"Don vi","type":"control_textbox"},null,{"description":"","name":"typeA48","qid":"48","subLabel":"","text":"Nhom thiết bi","type":"control_dropdown"},{"description":"","name":"nhomThit","qid":"49","subLabel":"","text":"Loai thiết bi","type":"control_dropdown"},{"description":"","name":"loaiThit","qid":"50","subLabel":"","text":"Mức dộ rui ro","type":"control_dropdown"},{"description":"","name":"donVi51","qid":"51","subLabel":"","text":"Nha cung cấp","type":"control_textbox"},{"description":"","name":"nhaCung","qid":"52","subLabel":"","text":"Hang san xuất","type":"control_textbox"},{"description":"","name":"xutX53","qid":"53","subLabel":"","text":"Xuất xứ","type":"control_textbox"},null,null,null,{"description":"","name":"namSan57","qid":"57","subLabel":"","text":"Nam san xuất","type":"control_number"},null,{"description":"","name":"xutX","qid":"59","subLabel":"","text":"Gia nhập","type":"control_textbox"},null,null,null,null,{"description":"","name":"date","qid":"64","text":"Ngay nhập kho","type":"control_datetime"},{"description":"","name":"ngayNhp","qid":"65","text":"Ngay kiểm dinh gần nhất","type":"control_datetime"},{"description":"","name":"ngayKim","qid":"66","text":"Ngay hết han bao hanh","type":"control_datetime"},null,{"description":"","name":"number","qid":"68","subLabel":"Nhập số thang","text":"Kiểm dinh dinh ki","type":"control_number"},{"description":"","name":"typeA69","qid":"69","subLabel":"","text":"Thong số ki thuật","type":"control_textarea"},{"description":"","name":"thongS","qid":"70","subLabel":"","text":"Cấu hinh ki thuật","type":"control_textarea"},{"description":"","name":"typeA71","qid":"71","subLabel":"Don vi: %","text":"Gia tri ban dầu","type":"control_spinner"},{"description":"","name":"giaTri","qid":"72","subLabel":"Don vi: %","text":"Gia tri hiện tai","type":"control_spinner"},{"description":"","name":"giaTri73","qid":"73","subLabel":"Don vi: %","text":"Khấu hao hang nam","type":"control_spinner"},null,null,null,{"description":"","name":"xutX77","qid":"77","subLabel":"","text":"Don vi bao tri","type":"control_textbox"},null,null,{"description":"","name":"nhomThit80","qid":"80","subLabel":"","text":"Can bộ vật tu phu trach","type":"control_dropdown"},{"description":"","name":"canB","qid":"81","subLabel":"","text":"Can bộ khoa phong phu trach","type":"control_dropdown"},{"description":"","name":"canB82","qid":"82","subLabel":"","text":"Khoa phong sử dung","type":"control_dropdown"},{"description":"","name":"anhDai83","qid":"83","subLabel":"","text":"Anh minh hoa","type":"control_fileupload"},null,null,{"description":"","name":"ngayKim86","qid":"86","text":"Ngay ban giao","type":"control_datetime"},null,null,{"description":"","name":"number89","qid":"89","subLabel":"","text":"Nam sử dung","type":"control_number"}]);
-   setTimeout(function() {
-JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Nhập thiết bi mới","type":"control_head"},null,{"description":"","name":"typeA","qid":"42","subLabel":"","text":"Ten thiết bi","type":"control_textbox"},{"description":"","name":"typeA43","qid":"43","subLabel":"","text":"Model","type":"control_textbox"},{"description":"","name":"model","qid":"44","subLabel":"","text":"Serial","type":"control_textbox"},{"description":"","name":"serial","qid":"45","subLabel":"","text":"Số luợng","type":"control_textbox"},{"description":"","name":"donVi","qid":"46","subLabel":"","text":"Don vi","type":"control_textbox"},null,{"description":"","name":"typeA48","qid":"48","subLabel":"","text":"Nhom thiết bi","type":"control_dropdown"},{"description":"","name":"nhomThit","qid":"49","subLabel":"","text":"Loai thiết bi","type":"control_dropdown"},{"description":"","name":"loaiThit","qid":"50","subLabel":"","text":"Mức dộ rui ro","type":"control_dropdown"},{"description":"","name":"donVi51","qid":"51","subLabel":"","text":"Nha cung cấp","type":"control_textbox"},{"description":"","name":"nhaCung","qid":"52","subLabel":"","text":"Hang san xuất","type":"control_textbox"},{"description":"","name":"xutX53","qid":"53","subLabel":"","text":"Xuất xứ","type":"control_textbox"},null,null,null,{"description":"","name":"namSan57","qid":"57","subLabel":"","text":"Nam san xuất","type":"control_number"},null,{"description":"","name":"xutX","qid":"59","subLabel":"","text":"Gia nhập","type":"control_textbox"},null,null,null,null,{"description":"","name":"date","qid":"64","text":"Ngay nhập kho","type":"control_datetime"},{"description":"","name":"ngayNhp","qid":"65","text":"Ngay kiểm dinh gần nhất","type":"control_datetime"},{"description":"","name":"ngayKim","qid":"66","text":"Ngay hết han bao hanh","type":"control_datetime"},null,{"description":"","name":"number","qid":"68","subLabel":"Nhập số thang","text":"Kiểm dinh dinh ki","type":"control_number"},{"description":"","name":"typeA69","qid":"69","subLabel":"","text":"Thong số ki thuật","type":"control_textarea"},{"description":"","name":"thongS","qid":"70","subLabel":"","text":"Cấu hinh ki thuật","type":"control_textarea"},{"description":"","name":"typeA71","qid":"71","subLabel":"Don vi: %","text":"Gia tri ban dầu","type":"control_spinner"},{"description":"","name":"giaTri","qid":"72","subLabel":"Don vi: %","text":"Gia tri hiện tai","type":"control_spinner"},{"description":"","name":"giaTri73","qid":"73","subLabel":"Don vi: %","text":"Khấu hao hang nam","type":"control_spinner"},null,null,null,{"description":"","name":"xutX77","qid":"77","subLabel":"","text":"Don vi bao tri","type":"control_textbox"},null,null,{"description":"","name":"nhomThit80","qid":"80","subLabel":"","text":"Can bộ vật tu phu trach","type":"control_dropdown"},{"description":"","name":"canB","qid":"81","subLabel":"","text":"Can bộ khoa phong phu trach","type":"control_dropdown"},{"description":"","name":"canB82","qid":"82","subLabel":"","text":"Khoa phong sử dung","type":"control_dropdown"},{"description":"","name":"anhDai83","qid":"83","subLabel":"","text":"Anh minh hoa","type":"control_fileupload"},null,null,{"description":"","name":"ngayKim86","qid":"86","text":"Ngay ban giao","type":"control_datetime"},null,null,{"description":"","name":"number89","qid":"89","subLabel":"","text":"Nam sử dung","type":"control_number"}]);}, 20); 
+         JotForm.prepareCalculationsOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Nhập thiết bi mới","type":"control_head"},null,{"description":"","name":"typeA","qid":"42","subLabel":"","text":"Ten thiết bi","type":"control_textbox"},{"description":"","name":"typeA43","qid":"43","subLabel":"","text":"Model","type":"control_textbox"},{"description":"","name":"model","qid":"44","subLabel":"","text":"Serial","type":"control_textbox"},{"description":"","name":"serial","qid":"45","subLabel":"","text":"Số luợng","type":"control_textbox"},{"description":"","name":"donVi","qid":"46","subLabel":"","text":"Don vi","type":"control_textbox"},null,{"description":"","name":"typeA48","qid":"48","subLabel":"","text":"Nhom thiết bi","type":"control_dropdown"},{"description":"","name":"nhomThit","qid":"49","subLabel":"","text":"Loai thiết bi","type":"control_dropdown"},{"description":"","name":"loaiThit","qid":"50","subLabel":"","text":"Mức dộ rui ro","type":"control_dropdown"},{"description":"","name":"donVi51","qid":"51","subLabel":"","text":"Nha cung cấp","type":"control_textbox"},{"description":"","name":"nhaCung","qid":"52","subLabel":"","text":"Hang san xuất","type":"control_textbox"},{"description":"","name":"xutX53","qid":"53","subLabel":"","text":"Xuất xứ","type":"control_textbox"},null,null,null,{"description":"","name":"namSan57","qid":"57","subLabel":"","text":"Nam san xuất","type":"control_number"},null,{"description":"","name":"xutX","qid":"59","subLabel":"","text":"Gia nhập","type":"control_textbox"},null,null,null,null,{"description":"","name":"date","qid":"64","text":"Ngay nhập kho","type":"control_datetime"},{"description":"","name":"ngayNhp","qid":"65","text":"Ngay kiểm dinh gần nhất","type":"control_datetime"},{"description":"","name":"ngayKim","qid":"66","text":"Ngay hết han bao hanh","type":"control_datetime"},null,{"description":"","name":"number","qid":"68","subLabel":"Nhập số thang","text":"Kiểm dinh dinh ki","type":"control_number"},{"description":"","name":"typeA69","qid":"69","subLabel":"","text":"Thong số ki thuật","type":"control_textarea"},{"description":"","name":"thongS","qid":"70","subLabel":"","text":"Cấu hinh ki thuật","type":"control_textarea"},{"description":"","name":"typeA71","qid":"71","subLabel":"Don vi: %","text":"Gia tri ban dầu","type":"control_spinner"},{"description":"","name":"giaTri","qid":"72","subLabel":"Don vi: %","text":"Gia tri hiện tai","type":"control_spinner"},{"description":"","name":"giaTri73","qid":"73","subLabel":"Don vi: %","text":"Khấu hao hang nam","type":"control_spinner"},null,null,null,{"description":"","name":"xutX77","qid":"77","subLabel":"","text":"Don vi bao tri","type":"control_textbox"},null,null,{"description":"","name":"nhomThit80","qid":"80","subLabel":"","text":"Can bộ vật tu phu trach","type":"control_dropdown"},{"description":"","name":"canB","qid":"81","subLabel":"","text":"Can bộ khoa phong phu trach","type":"control_dropdown"},{"description":"","name":"canB82","qid":"82","subLabel":"","text":"Khoa phong sử dung","type":"control_dropdown"},{"description":"","name":"anhDai83","qid":"83","subLabel":"","text":"Anh minh hoa","type":"control_fileupload"},null,null,{"description":"","name":"ngayKim86","qid":"86","text":"Ngay ban giao","type":"control_datetime"},null,null,{"description":"","name":"number89","qid":"89","subLabel":"","text":"Nam sử dung","type":"control_number"}]);
+             setTimeout(function() {
+            JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Nhập thiết bi mới","type":"control_head"},null,{"description":"","name":"typeA","qid":"42","subLabel":"","text":"Ten thiết bi","type":"control_textbox"},{"description":"","name":"typeA43","qid":"43","subLabel":"","text":"Model","type":"control_textbox"},{"description":"","name":"model","qid":"44","subLabel":"","text":"Serial","type":"control_textbox"},{"description":"","name":"serial","qid":"45","subLabel":"","text":"Số luợng","type":"control_textbox"},{"description":"","name":"donVi","qid":"46","subLabel":"","text":"Don vi","type":"control_textbox"},null,{"description":"","name":"typeA48","qid":"48","subLabel":"","text":"Nhom thiết bi","type":"control_dropdown"},{"description":"","name":"nhomThit","qid":"49","subLabel":"","text":"Loai thiết bi","type":"control_dropdown"},{"description":"","name":"loaiThit","qid":"50","subLabel":"","text":"Mức dộ rui ro","type":"control_dropdown"},{"description":"","name":"donVi51","qid":"51","subLabel":"","text":"Nha cung cấp","type":"control_textbox"},{"description":"","name":"nhaCung","qid":"52","subLabel":"","text":"Hang san xuất","type":"control_textbox"},{"description":"","name":"xutX53","qid":"53","subLabel":"","text":"Xuất xứ","type":"control_textbox"},null,null,null,{"description":"","name":"namSan57","qid":"57","subLabel":"","text":"Nam san xuất","type":"control_number"},null,{"description":"","name":"xutX","qid":"59","subLabel":"","text":"Gia nhập","type":"control_textbox"},null,null,null,null,{"description":"","name":"date","qid":"64","text":"Ngay nhập kho","type":"control_datetime"},{"description":"","name":"ngayNhp","qid":"65","text":"Ngay kiểm dinh gần nhất","type":"control_datetime"},{"description":"","name":"ngayKim","qid":"66","text":"Ngay hết han bao hanh","type":"control_datetime"},null,{"description":"","name":"number","qid":"68","subLabel":"Nhập số thang","text":"Kiểm dinh dinh ki","type":"control_number"},{"description":"","name":"typeA69","qid":"69","subLabel":"","text":"Thong số ki thuật","type":"control_textarea"},{"description":"","name":"thongS","qid":"70","subLabel":"","text":"Cấu hinh ki thuật","type":"control_textarea"},{"description":"","name":"typeA71","qid":"71","subLabel":"Don vi: %","text":"Gia tri ban dầu","type":"control_spinner"},{"description":"","name":"giaTri","qid":"72","subLabel":"Don vi: %","text":"Gia tri hiện tai","type":"control_spinner"},{"description":"","name":"giaTri73","qid":"73","subLabel":"Don vi: %","text":"Khấu hao hang nam","type":"control_spinner"},null,null,null,{"description":"","name":"xutX77","qid":"77","subLabel":"","text":"Don vi bao tri","type":"control_textbox"},null,null,{"description":"","name":"nhomThit80","qid":"80","subLabel":"","text":"Can bộ vật tu phu trach","type":"control_dropdown"},{"description":"","name":"canB","qid":"81","subLabel":"","text":"Can bộ khoa phong phu trach","type":"control_dropdown"},{"description":"","name":"canB82","qid":"82","subLabel":"","text":"Khoa phong sử dung","type":"control_dropdown"},{"description":"","name":"anhDai83","qid":"83","subLabel":"","text":"Anh minh hoa","type":"control_fileupload"},null,null,{"description":"","name":"ngayKim86","qid":"86","text":"Ngay ban giao","type":"control_datetime"},null,null,{"description":"","name":"number89","qid":"89","subLabel":"","text":"Nam sử dung","type":"control_number"}]);}, 20); 
 </script>
+@endsection
 
+@section('css')
 <style type="text/css">
     @media print {
         .form-section {
@@ -290,6 +291,11 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
 
     /* Injected CSS Code */
 </style>
+@endsection
+@section('content')
+
+
+
 
 <form action="/thietbi/danhsach">
     <li class="form-line" data-type="control_button" id="id_36">
@@ -328,7 +334,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 </div>
             </li>
             <li class="form-line form-line-column form-col-7" data-type="control_fileupload" id="id_104">
-                <label class="form-label form-label-top form-label-auto" id="label_104" for="input_104"> Ảnh đại diện
+                <label class="form-label form-label-top form-label-auto" id="label_104" for="img_upload"> Ảnh đại diện
                 </label>
                 <div id="cid_104" class="form-input-wide" data-layout="full">
                     <div class="jfQuestion-fields" data-wrapper-react="true">
@@ -367,7 +373,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                                     </div>
                                 </div>
                                 <div class="jfUpload-files-container">
-                                    <input type="file" id="input_104" name="AnhMinhHoa" multiple=""
+                                    <input type="file" id="img_upload" name="AnhMinhHoa" multiple=""
                                         class="form-upload-multiple" data-imagevalidate="yes"
                                         data-file-accept="jpg, jpeg, png, gif" data-file-maxsize="10854"
                                         data-file-minsize="0" data-file-limit="1" data-component="fileupload"
@@ -389,7 +395,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
             <li class="form-line form-line-column form-col-8" data-type="control_image" id="id_105">
                 <div id="cid_105" class="form-input-wide" data-layout="full">
                     <div style="text-align:center">
-                        <img alt="" class="form-image" style="border:0"
+                        <img alt="" class="form-image" style="border:0" id="img"
                             src="{{ empty($ThietBi->AnhMinhHoa) ? url('upload/no_image.jpg') : url( $ThietBi->AnhMinhHoa) }}"
                             height="200px" width="199px" data-component="image" />
                     </div>
@@ -486,7 +492,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 </label>
                 <div id="cid_49" class="form-input-wide" data-layout="half">
                     <select class="form-dropdown" style="width:310px;" id="LoaiThietBi" name="idLoaiThietBi">
-                        
+
                         <option value=""> Chọn loại thiết bị </option>
                         {{-- @if(old('idLoaiThietBi'))
                         <option value="{{old('idLoaiThietBi')}}"> {{ old('idLoaiThietBi')}} </option>
@@ -519,7 +525,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
 
                         <option value="D" {{ old('MucDoRuiRo') ? (old('MucDoRuiRo')=='D' ? 'selected' : '' ) :
                             ($ThietBi->MucDoRuiRo == 'D' ? 'selected' : '')}}> D </option>
-                        
+
 
                     </select>
                 </div>
@@ -536,7 +542,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             idNhaCungCap ? 'selected' : ''}}>
                             {{$NhaCungCap->TenNhaCungCap}}
                         </option>
-                         --}}
+                        --}}
                         <option value="{{$NhaCungCap->idNhaCungCap}}" {{ old('idNhaCungCap') ?
                             (old('idNhaCungCap')==$NhaCungCap->idNhaCungCap ? 'selected' : '') :
                             ($ThietBi->idNhaCungCap == $NhaCungCap->idNhaCungCap ? 'selected' : '')}}>
@@ -570,8 +576,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 <div id="cid_52" class="form-input-wide" data-layout="half">
                     <input type="text" id="input_52" name="HangSanXuat" data-type="input-textbox" class="form-textbox"
                         data-defaultvalue="" style="width:310px" size="310"
-                        value="{{old('HangSanXuat') ? old('HangSanXuat') : $ThietBi->HangSanXuat}}" placeholder="Hãng sản xuất..."
-                        data-component="textbox" aria-labelledby="label_52" />
+                        value="{{old('HangSanXuat') ? old('HangSanXuat') : $ThietBi->HangSanXuat}}"
+                        placeholder="Hãng sản xuất..." data-component="textbox" aria-labelledby="label_52" />
                 </div>
             </li>
             <li class="form-line form-line-column form-col-10" data-type="control_textbox" id="id_53">
@@ -636,7 +642,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                         </option> --}}
                         <option value="{{$CanBoKhoaPhongPhuTrach->idNguoiDung}}" {{ old('idCanBoKhoaPhongPhuTrach') ?
                             (old('idCanBoKhoaPhongPhuTrach')==$CanBoKhoaPhongPhuTrach->idNguoiDung ? 'selected' : '') :
-                            ($ThietBi->idCanBoKhoaPhongPhuTrach == $CanBoKhoaPhongPhuTrach->idNguoiDung ? 'selected' : '')}}>
+                            ($ThietBi->idCanBoKhoaPhongPhuTrach == $CanBoKhoaPhongPhuTrach->idNguoiDung ? 'selected' :
+                            '')}}>
                             {{$CanBoKhoaPhongPhuTrach->HoVaTen}}
                         </option>
                         @endforeach
@@ -653,7 +660,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     <select class="form-dropdown" style="width:310px;" id="input_82" name="idKhoaPhongSuDung">
                         <option value="{{$ThietBi->idKhoaPhongSuDung}}"> Chọn khoa phòng </option>
                         @foreach ($DSKhoaPhongSuDung as $KhoaPhongSuDung )
-                        {{-- <option value="{{$KhoaPhongSuDung->idKhoaPhong}}" {{old('idKhoaPhongSuDung')==$KhoaPhongSuDung->
+                        {{-- <option value="{{$KhoaPhongSuDung->idKhoaPhong}}"
+                            {{old('idKhoaPhongSuDung')==$KhoaPhongSuDung->
                             idKhoaPhong ? 'selected' : ''}}>
                             {{$KhoaPhongSuDung->TenKhoaPhong}}
                         </option> --}}
@@ -676,9 +684,9 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input type="date" name="NgayNhapKho"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_64" size="12"
                                 data-maxlength="12" maxLength="12" data-age=""
-                                value="{{old('NgayNhapKho') ? old('NgayNhapKho') : $ThietBi->NgayNhapKho}}" data-format="mmddyyyy"
-                                data-seperator="/" placeholder="MM/DD/YYYY" autoComplete="section-input_64 off"
-                                aria-labelledby="label_64" />
+                                value="{{old('NgayNhapKho') ? old('NgayNhapKho') : $ThietBi->NgayNhapKho}}"
+                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                autoComplete="section-input_64 off" aria-labelledby="label_64" />
                             <label class="form-sub-label is-empty" for="lite_mode_64" id="sublabel_64_litemode"
                                 style="min-height:13px" aria-hidden="false"> </label>
                         </span>
@@ -692,8 +700,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     <span class="form-sub-label-container" style="vertical-align:top">
                         <input type="number" id="input_68" name="KiemDinhDinhKy" data-type="input-number"
                             class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                            value="{{old('KiemDinhDinhKy') ? old('KiemDinhDinhKy') : $ThietBi->KiemDinhDinhKy}}" data-component="number"
-                            aria-labelledby="label_68 sublabel_input_68" step="any" />
+                            value="{{old('KiemDinhDinhKy') ? old('KiemDinhDinhKy') : $ThietBi->KiemDinhDinhKy}}"
+                            data-component="number" aria-labelledby="label_68 sublabel_input_68" step="any" />
                         <label class="form-sub-label" for="input_68" id="sublabel_input_68" style="min-height:13px"
                             aria-hidden="false"> Nhập số tháng </label>
                     </span>
@@ -709,10 +717,10 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input type="date" class="form-textbox validate[limitDate, validateLiteDate]"
                                 id="lite_mode_65" size="12" name="NgayKiemDinhGanNhat" data-maxlength="12"
                                 maxLength="12" data-age=""
-                                value="{{old('NgayKiemDinhGanNhat') ? old('NgayKiemDinhGanNhat') : $ThietBi->NgayKiemDinhGanNhat}}" data-format="mmddyyyy"
-                                data-seperator="/" placeholder="MM/DD/YYYY" autoComplete="section-input_65 off"
-                                aria-labelledby="label_65" />
-                            
+                                value="{{old('NgayKiemDinhGanNhat') ? old('NgayKiemDinhGanNhat') : $ThietBi->NgayKiemDinhGanNhat}}"
+                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                autoComplete="section-input_65 off" aria-labelledby="label_65" />
+
                             <label class="form-sub-label is-empty" for="lite_mode_65" id="sublabel_65_litemode"
                                 style="min-height:13px" aria-hidden="false"> </label>
                         </span>
@@ -729,10 +737,10 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input type="date" name="NgayHetHanBaoHanh"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_66" size="12"
                                 data-maxlength="12" maxLength="12" data-age=""
-                                value="{{old('NgayHetHanBaoHanh') ? old('NgayHetHanBaoHanh') : $ThietBi->NgayHetHanBaoHanh}}" data-format="mmddyyyy"
-                                data-seperator="/" placeholder="MM/DD/YYYY" autoComplete="section-input_66 off"
-                                aria-labelledby="label_66" />
-                           
+                                value="{{old('NgayHetHanBaoHanh') ? old('NgayHetHanBaoHanh') : $ThietBi->NgayHetHanBaoHanh}}"
+                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                autoComplete="section-input_66 off" aria-labelledby="label_66" />
+
                             <label class="form-sub-label is-empty" for="lite_mode_66" id="sublabel_66_litemode"
                                 style="min-height:13px" aria-hidden="false"> </label>
                         </span>
@@ -744,8 +752,9 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 </label>
                 <div id="cid_69" class="form-input-wide" data-layout="full">
                     <textarea id="input_69" class="form-textarea" name="ThongSoKyThuat"
-                        value="{{old('ThongSoKyThuat') ? old('ThongSoKyThuat') : $ThietBi->ThongSoKyThuat}}" style="width:648px;height:163px"
-                        data-component="textarea" aria-labelledby="label_69"></textarea>
+                        value="{{old('ThongSoKyThuat') ? old('ThongSoKyThuat') : $ThietBi->ThongSoKyThuat}}"
+                        style="width:648px;height:163px" data-component="textarea"
+                        aria-labelledby="label_69"></textarea>
                 </div>
             </li>
             <li class="form-line form-line-column form-col-2" data-type="control_textarea" id="id_70">
@@ -753,8 +762,9 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 </label>
                 <div id="cid_70" class="form-input-wide" data-layout="full">
                     <textarea id="input_70" class="form-textarea" name="CauHinhKyThuat"
-                        value="{{old('CauHinhKyThuat') ? old('CauHinhKyThuat') : $ThietBi->CauHinhKyThuat}}" style="width:648px;height:163px"
-                        data-component="textarea" aria-labelledby="label_70"></textarea>
+                        value="{{old('CauHinhKyThuat') ? old('CauHinhKyThuat') : $ThietBi->CauHinhKyThuat}}"
+                        style="width:648px;height:163px" data-component="textarea"
+                        aria-labelledby="label_70"></textarea>
                 </div>
             </li>
             <li class="form-line form-line-column form-col-1" data-type="control_number" id="id_71">
@@ -764,8 +774,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     <span class="form-sub-label-container" style="vertical-align:top">
                         <input type="number" id="input_68" name="GiaTriBanDau" data-type="input-number"
                             class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                            value="{{old('GiaTriBanDau') ? old('GiaTriBanDau') : $ThietBi->GiaTriBanDau}}" data-component="number"
-                            aria-labelledby="label_71 sublabel_input_71" step="any" />
+                            value="{{old('GiaTriBanDau') ? old('GiaTriBanDau') : $ThietBi->GiaTriBanDau}}"
+                            data-component="number" aria-labelledby="label_71 sublabel_input_71" step="any" />
                         <label class="form-sub-label" for="input_71" id="sublabel_input_71" style="min-height:13px"
                             aria-hidden="false"> Đơn vị: % </label>
                     </span>
@@ -779,8 +789,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     <span class="form-sub-label-container" style="vertical-align:top">
                         <input type="number" id="input_72" name="GiaTriHienTai" data-type="input-spinner"
                             class="form-number-input  form-textbox" data-defaultvalue=""
-                            value="{{old('GiaTriHienTai') ? old('GiaTriHienTai') : $ThietBi->GiaTriHienTai}} data-component=" number"
-                            aria-labelledby="label_72 sublabel_input_72" />
+                            value="{{old('GiaTriHienTai') ? old('GiaTriHienTai') : $ThietBi->GiaTriHienTai}} data-component="
+                            number" aria-labelledby="label_72 sublabel_input_72" />
                         <label class="form-sub-label" for="input_72" id="sublabel_input_72" style="min-height:13px"
                             aria-hidden="false"> Đơn vị: % </label>
                     </span>
@@ -793,8 +803,8 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     <span class="form-sub-label-container" style="vertical-align:top">
                         <input type="number" id="input_73" name="KhauHaoHangNam" data-type="input-spinner"
                             class="form-number-input  form-textbox" data-defaultvalue=""
-                            value="{{old('KhauHaoHangNam') ? old('KhauHaoHangNam') : $ThietBi->KhauHaoHangNam}}" data-component="number"
-                            aria-labelledby="label_73 sublabel_input_73" />
+                            value="{{old('KhauHaoHangNam') ? old('KhauHaoHangNam') : $ThietBi->KhauHaoHangNam}}"
+                            data-component="number" aria-labelledby="label_73 sublabel_input_73" />
                         <label class="form-sub-label" for="input_73" id="sublabel_input_73" style="min-height:13px"
                             aria-hidden="false"> Đơn vị: % </label>
                     </span>
@@ -821,9 +831,9 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                             <input type="date" name="NgayBanGiao"
                                 class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_86" size="12"
                                 data-maxlength="12" maxLength="12" data-age=""
-                                value="{{old('NgayBanGiao') ? old('NgayBanGiao') : $ThietBi->NgayBanGiao}}" data-format="mmddyyyy"
-                                data-seperator="/" placeholder="MM/DD/YYYY" autoComplete="section-input_86 off"
-                                aria-labelledby="label_86" />
+                                value="{{old('NgayBanGiao') ? old('NgayBanGiao') : $ThietBi->NgayBanGiao}}"
+                                data-format="mmddyyyy" data-seperator="/" placeholder="MM/DD/YYYY"
+                                autoComplete="section-input_86 off" aria-labelledby="label_86" />
                             <img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date"
                                 id="input_86_pick" src="https://cdn.jotfor.ms/images/calendar.png"
                                 data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
@@ -833,7 +843,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                     </div>
                 </div>
             </li>
-            
+
 
 
             <li class="form-line" data-type="control_button" id="id_36">
@@ -901,6 +911,31 @@ for (var i = 0; i < all_spc.length; i++)
         });
     });
 
+</script>
+
+{{-- display img when input img change --}}
+<script>
+    $(function(){
+  $('#img_upload').change(function(){
+    var input = this;
+    var url = $(this).val();
+    var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+    if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
+     {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+           $('#img').attr('src', e.target.result);
+        }
+       reader.readAsDataURL(input.files[0]);
+    }
+    else
+    {
+      $('#img').attr('src', '/upload/no_preview.png');
+    }
+  });
+
+});
 </script>
 @endsection
 @endsection

@@ -1,51 +1,5 @@
 @extends('user.user_master')
-
-@section('user')
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<div class="row" style="padding: 20px;">
-    <div class="col-md-6">
-        <form method="post" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Họ Tên</label>
-                <input type="text" name="HoVaTen" class="form-control" value="{{ $user->HoVaTen }}"
-                    placeholder="{{ $user->HoVaTen }}" disabled readonly>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" name="Email" class="form-control" value="{{ $user->Email }}"
-                    placeholder="{{ $user->Email }}" disabled readonly>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Số điện thoại</label>
-                <input type="text" name="SoDienThoai" class="form-control" value="{{ $user->SoDienThoai }}"
-                    placeholder="{{ $user->SoDienThoai }}">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Địa chỉ</label>
-                <input type="text" name="DiaChi" class="form-control" value="{{ $user->DiaChi }}"
-                    placeholder="{{ $user->DiaChi }}">
-            </div>
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Ảnh đại diện</label>
-                <input class="form-control" name="profile_photo_path" type="file" id="image">
-            </div>
-            <div class="mb-3">
-                <img id="showImage"
-                    src=" {{ empty($user->profile_photo_path) ? url('upload/no_image.jpg') : url('upload/UserImages/' . $user->profile_photo_path) }}"
-                    style="width:200px; height: 200px;">
-            </div>
-            <button type="submit" class="btn btn-primary">Thay đổi</button>
-        </form>
-    </div>
-</div> --}}
-
-
-
-
-
-
+@section('header_script')
 <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
 <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.30239" type="text/javascript"></script>
 <script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.30239" type="text/javascript"></script>
@@ -55,39 +9,41 @@
 <script src="https://cdn03.jotfor.ms/js/vendor/imageinfo.js?v=3.3.30239" type="text/javascript"></script>
 <script src="https://cdn01.jotfor.ms/file-uploader/fileuploader.js?v=3.3.30239"></script>
 <script type="text/javascript">
-    JotForm.newDefaultTheme = true;
-	JotForm.extendsNewTheme = false;
-	JotForm.newPaymentUIForNewCreatedForms = false;
-	JotForm.newPaymentUI = true;
+                JotForm.newDefaultTheme = true;
+                JotForm.extendsNewTheme = false;
+                JotForm.newPaymentUIForNewCreatedForms = false;
+                JotForm.newPaymentUI = true;
 
-   JotForm.setConditions([{"action":[{"field":"31","visibility":"Show","id":"action_1_1641920467418"}],"id":"1641920368876","index":"1","link":"Any","priority":"1","terms":[{"field":"10","operator":"equals","value":"Yes"}],"type":"field"}]);
-	JotForm.init(function(){
-	/*INIT-START*/
-if (window.JotForm && JotForm.accessible) $('input_95').setAttribute('tabindex',0);
-if (window.JotForm && JotForm.accessible) $('input_96').setAttribute('tabindex',0);
-      setTimeout(function() {
-          $('input_98').hint('ex: 23');
-       }, 20);
-if (window.JotForm && JotForm.accessible) $('input_100').setAttribute('tabindex',0);
+            JotForm.setConditions([{"action":[{"field":"31","visibility":"Show","id":"action_1_1641920467418"}],"id":"1641920368876","index":"1","link":"Any","priority":"1","terms":[{"field":"10","operator":"equals","value":"Yes"}],"type":"field"}]);
+                JotForm.init(function(){
+                /*INIT-START*/
+            if (window.JotForm && JotForm.accessible) $('input_95').setAttribute('tabindex',0);
+            if (window.JotForm && JotForm.accessible) $('input_96').setAttribute('tabindex',0);
+                setTimeout(function() {
+                    $('input_98').hint('ex: 23');
+                }, 20);
+            if (window.JotForm && JotForm.accessible) $('input_100').setAttribute('tabindex',0);
 
- JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
- JotForm.calendarOther = {"today":"Today"};
- var languageOptions = document.querySelectorAll('#langList li'); 
- for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
-   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("101", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
- } 
- JotForm.onTranslationsFetch(function() { JotForm.setCalendar("101", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
-      setTimeout(function() {
-          JotForm.initMultipleUploads();
-      }, 2);
-	/*INIT-END*/
-	});
+            JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+            JotForm.calendarOther = {"today":"Today"};
+            var languageOptions = document.querySelectorAll('#langList li'); 
+            for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+            languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("101", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); }, 0); });
+            } 
+            JotForm.onTranslationsFetch(function() { JotForm.setCalendar("101", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":""}); });
+                setTimeout(function() {
+                    JotForm.initMultipleUploads();
+                }, 2);
+                /*INIT-END*/
+                });
 
-   JotForm.prepareCalculationsOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Thay dổi thong tin","type":"control_head"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"hoVa","qid":"95","subLabel":"","text":"Ho va ten","type":"control_textbox"},{"description":"","name":"hoVa96","qid":"96","subLabel":"","text":"Email","type":"control_textbox"},null,{"description":"","name":"number","qid":"98","subLabel":"","text":"Số diện thoai","type":"control_number"},null,{"description":"","name":"typeA","qid":"100","subLabel":"","text":"Dia chi","type":"control_textbox"},{"description":"","name":"date","qid":"101","text":"Ngay sinh","type":"control_datetime"},{"description":"","name":"typeA102","qid":"102","subLabel":"","text":"Khoa Phong - Ban","type":"control_dropdown"},null,{"description":"","name":"anh104","qid":"104","subLabel":"","text":"Anh dai diện ","type":"control_fileupload"},{"description":"","labelText":"","name":"40noj661e8e2e7bbb67908217757","qid":"105","text":"40noj6.61e8e2e7bbb679.08217757","type":"control_image"}]);
-   setTimeout(function() {
-JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Thay dổi thong tin","type":"control_head"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"hoVa","qid":"95","subLabel":"","text":"Ho va ten","type":"control_textbox"},{"description":"","name":"hoVa96","qid":"96","subLabel":"","text":"Email","type":"control_textbox"},null,{"description":"","name":"number","qid":"98","subLabel":"","text":"Số diện thoai","type":"control_number"},null,{"description":"","name":"typeA","qid":"100","subLabel":"","text":"Dia chi","type":"control_textbox"},{"description":"","name":"date","qid":"101","text":"Ngay sinh","type":"control_datetime"},{"description":"","name":"typeA102","qid":"102","subLabel":"","text":"Khoa Phong - Ban","type":"control_dropdown"},null,{"description":"","name":"anh104","qid":"104","subLabel":"","text":"Anh dai diện ","type":"control_fileupload"},{"description":"","labelText":"","name":"40noj661e8e2e7bbb67908217757","qid":"105","text":"40noj6.61e8e2e7bbb679.08217757","type":"control_image"}]);}, 20); 
+                JotForm.prepareCalculationsOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Thay dổi thong tin","type":"control_head"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"hoVa","qid":"95","subLabel":"","text":"Ho va ten","type":"control_textbox"},{"description":"","name":"hoVa96","qid":"96","subLabel":"","text":"Email","type":"control_textbox"},null,{"description":"","name":"number","qid":"98","subLabel":"","text":"Số diện thoai","type":"control_number"},null,{"description":"","name":"typeA","qid":"100","subLabel":"","text":"Dia chi","type":"control_textbox"},{"description":"","name":"date","qid":"101","text":"Ngay sinh","type":"control_datetime"},{"description":"","name":"typeA102","qid":"102","subLabel":"","text":"Khoa Phong - Ban","type":"control_dropdown"},null,{"description":"","name":"anh104","qid":"104","subLabel":"","text":"Anh dai diện ","type":"control_fileupload"},{"description":"","labelText":"","name":"40noj661e8e2e7bbb67908217757","qid":"105","text":"40noj6.61e8e2e7bbb679.08217757","type":"control_image"}]);
+            setTimeout(function() {
+            JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"them","qid":"36","text":"Them","type":"control_button"},null,null,null,{"name":"clickTo","qid":"40","text":"Thay dổi thong tin","type":"control_head"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"hoVa","qid":"95","subLabel":"","text":"Ho va ten","type":"control_textbox"},{"description":"","name":"hoVa96","qid":"96","subLabel":"","text":"Email","type":"control_textbox"},null,{"description":"","name":"number","qid":"98","subLabel":"","text":"Số diện thoai","type":"control_number"},null,{"description":"","name":"typeA","qid":"100","subLabel":"","text":"Dia chi","type":"control_textbox"},{"description":"","name":"date","qid":"101","text":"Ngay sinh","type":"control_datetime"},{"description":"","name":"typeA102","qid":"102","subLabel":"","text":"Khoa Phong - Ban","type":"control_dropdown"},null,{"description":"","name":"anh104","qid":"104","subLabel":"","text":"Anh dai diện ","type":"control_fileupload"},{"description":"","labelText":"","name":"40noj661e8e2e7bbb67908217757","qid":"105","text":"40noj6.61e8e2e7bbb679.08217757","type":"control_image"}]);}, 20); 
 </script>
+@endsection
+@section('css')
 <style type="text/css">
     @media print {
         .form-section {
@@ -257,6 +213,55 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
 
     /* Injected CSS Code */
 </style>
+@endsection
+@section('content')
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="row" style="padding: 20px;">
+    <div class="col-md-6">
+        <form method="post" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Họ Tên</label>
+                <input type="text" name="HoVaTen" class="form-control" value="{{ $user->HoVaTen }}"
+                    placeholder="{{ $user->HoVaTen }}" disabled readonly>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" name="Email" class="form-control" value="{{ $user->Email }}"
+                    placeholder="{{ $user->Email }}" disabled readonly>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Số điện thoại</label>
+                <input type="text" name="SoDienThoai" class="form-control" value="{{ $user->SoDienThoai }}"
+                    placeholder="{{ $user->SoDienThoai }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Địa chỉ</label>
+                <input type="text" name="DiaChi" class="form-control" value="{{ $user->DiaChi }}"
+                    placeholder="{{ $user->DiaChi }}">
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Ảnh đại diện</label>
+                <input class="form-control" name="profile_photo_path" type="file" id="image">
+            </div>
+            <div class="mb-3">
+                <img id="showImage"
+                    src=" {{ empty($user->profile_photo_path) ? url('upload/no_image.jpg') : url('upload/UserImages/' . $user->profile_photo_path) }}"
+                    style="width:200px; height: 200px;">
+            </div>
+            <button type="submit" class="btn btn-primary">Thay đổi</button>
+        </form>
+    </div>
+</div> --}}
+
+
+
+
+
+
+
+
 
 <form class="jotform-form" action="{{route('user.profile.store')}}" method="post" enctype="multipart/form-data"
     name="form_220188742393460" id="220188742393460" accept-charset="utf-8" autocomplete="on">
@@ -349,7 +354,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 </div>
             </li>
             <li class="form-line form-line-column form-col-7" data-type="control_fileupload" id="id_104">
-                <label class="form-label form-label-top form-label-auto" id="label_104" for="input_104"> Ảnh đại diện
+                <label class="form-label form-label-top form-label-auto" id="label_104" for="img_upload"> Ảnh đại diện
                 </label>
                 <div id="cid_104" class="form-input-wide" data-layout="full">
                     <div class="jfQuestion-fields" data-wrapper-react="true">
@@ -388,7 +393,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                                     </div>
                                 </div>
                                 <div class="jfUpload-files-container">
-                                    <input type="file" id="input_104" name="profile_photo_path" multiple=""
+                                    <input type="file" id="img_upload" name="profile_photo_path" multiple=""
                                         class="form-upload-multiple" data-imagevalidate="yes"
                                         data-file-accept="jpg, jpeg, png, gif" data-file-maxsize="10854"
                                         data-file-minsize="0" data-file-limit="1" data-component="fileupload"
@@ -410,7 +415,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
             <li class="form-line form-line-column form-col-8" data-type="control_image" id="id_105">
                 <div id="cid_105" class="form-input-wide" data-layout="full">
                     <div style="text-align:center">
-                        <img alt="" class="form-image" style="border:0"
+                        <img alt="" class="form-image" style="border:0" id="img"
                             src="{{ empty($user->profile_photo_path) ? url('upload/no_image.jpg') : url('upload/UserImages/' . $user->profile_photo_path) }}"
                             height="200px" width="199px" data-component="image" />
                     </div>
@@ -418,10 +423,10 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
             </li>
             <li class="form-line" data-type="control_button" id="id_36">
                 <div id="cid_36" class="form-input-wide" data-layout="full">
-                    <div  data-align="center"
+                    <div data-align="center"
                         class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
                         <button style="background-color:#036df8;" id="input_36" type="submit"
-                        class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+                            class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
                             data-component="button" data-content="">
                             Cập nhật
                         </button>
@@ -448,6 +453,33 @@ for (var i = 0; i < all_spc.length; i++)
     </div>
 
 </form>
+
+@section('script')
+
+
 <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.30239"></script>
 <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.30239"></script>
+<script>
+    $(function(){
+        $('#img_upload').change(function(){
+            var input = this;
+            var url = $(this).val();
+            var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+            if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
+            {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                $('#img').attr('src', e.target.result);
+                }
+            reader.readAsDataURL(input.files[0]);
+            }
+            else
+            {
+            $('#img').attr('src', '/public/upload/no_image.png');
+            }
+        });
+    });
+</script>
+@endsection
 @endsection

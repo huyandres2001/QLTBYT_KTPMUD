@@ -51,6 +51,15 @@ Route::group(['prefix' => 'thietbi'], function () {
     Route::post('/postthanhly/{id}', [ThietBiController::class, 'PostThanhLy']);
     Route::get('/getbaohong/{id}', [ThietBiController::class, 'GetBaoHong']);
     Route::post('/postbaohong/{id}', [ThietBiController::class, 'PostBaoHong']);
+    Route::get('/danhsachsuachua', [ThietBiController::class, 'GetDanhSachSuaChua'])->name('thietbi.suachua');
+    Route::get('/getsuachua/{id}', [ThietBiController::class, 'GetSuaChua']);
+    Route::post('/postsuachua',[ThietBiController::class, 'PostSuaChua']);
+    Route::get('/lichsusuachua/{id}',[ThietBiController::class, 'LichSuSuaChua']);
+    Route::get('/getcapnhat/{id}', [ThietBiController::class, 'GetCapNhat']);
+    Route::post('/postcapnhat', [ThietBiController::class, 'PostCapNhat']);
+    //tim kiem thiet bi
+    Route::get('/timkiem', [ThietBiController::class, 'TimKiem']);
+
 });
 
 Route::group(['prefix' => 'ajax'], function () {

@@ -326,7 +326,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                 </div>
             </li>
             <li class="form-line form-line-column form-col-7" data-type="control_fileupload" id="id_104">
-                <label class="form-label form-label-top form-label-auto" id="label_104" for="input_104"> Ảnh đại diện
+                <label class="form-label form-label-top form-label-auto" id="label_104" for="img_upload"> Ảnh đại diện
                 </label>
                 <div id="cid_104" class="form-input-wide" data-layout="full">
                     <div class="jfQuestion-fields" data-wrapper-react="true">
@@ -365,7 +365,7 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                                     </div>
                                 </div>
                                 <div class="jfUpload-files-container">
-                                    <input type="file" id="input_104" name="AnhMinhHoa" multiple=""
+                                    <input type="file" id="img_upload" name="AnhMinhHoa" multiple=""
                                         class="form-upload-multiple" data-imagevalidate="yes"
                                         data-file-accept="jpg, jpeg, png, gif" data-file-maxsize="10854"
                                         data-file-minsize="0" data-file-limit="1" data-component="fileupload"
@@ -381,6 +381,15 @@ JotForm.paymentExtrasOnTheFly([null,null,null,null,null,null,null,null,null,null
                         <span style="display:none" class="ofText">
                             of
                         </span>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-8" data-type="control_image" id="id_105">
+                <div id="cid_105" class="form-input-wide" data-layout="full">
+                    <div style="text-align:center">
+                        <img alt="" class="form-image" style="border:0" id="img"
+                            src="{{ empty($ThietBi->AnhMinhHoa) ? url('upload/no_image.jpg') : url( $ThietBi->AnhMinhHoa) }}"
+                            height="200px" width="199px" data-component="image" />
                     </div>
                 </div>
             </li>
@@ -813,6 +822,9 @@ for (var i = 0; i < all_spc.length; i++)
     </script>
 
 </form>
+
+@section('script')
+
 <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.30073"></script>
 <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.30073"></script>
 
@@ -821,7 +833,6 @@ for (var i = 0; i < all_spc.length; i++)
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
 {{-- dropdown dependent --}}
-<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -845,5 +856,31 @@ for (var i = 0; i < all_spc.length; i++)
         });
     });
 </script>
+
+{{-- display img when input img change --}}
+<script>
+    $(function(){
+  $('#img_upload').change(function(){
+    var input = this;
+    var url = $(this).val();
+    var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+    if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
+     {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+           $('#img').attr('src', e.target.result);
+        }
+       reader.readAsDataURL(input.files[0]);
+    }
+    else
+    {
+      $('#img').attr('src', '/upload/no_preview.png');
+    }
+  });
+
+});
+</script>
+@endsection
 
 @endsection

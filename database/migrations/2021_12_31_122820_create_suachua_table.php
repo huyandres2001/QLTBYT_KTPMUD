@@ -15,13 +15,12 @@ class CreateSuachuaTable extends Migration
     {
         Schema::create('suachua', function (Blueprint $table) {
             $table->id();
-            $table->string('idThietBiHong');
+            $table->string('SerialThietBiHong');
             $table->date('NgaySuaChua');
-            $table->date('NgaySuaXong');
-            $table->string('TrangThaiTruocKhiSua');
-            $table->string('TrangThaiSauKhiSua');
-            $table->string('ChiPhi');
-            $table->string('GhiChu');
+            $table->date('NgaySuaXong')->nullable();
+            $table->string('TinhTrangSauKhiSua')->nullable();
+            $table->string('ChiPhi')->nullable();
+            $table->string('GhiChu')->nullable();
             $table->timestamps();
         });
     }

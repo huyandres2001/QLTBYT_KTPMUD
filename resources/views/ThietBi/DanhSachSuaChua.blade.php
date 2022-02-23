@@ -1,9 +1,6 @@
 @extends('user.user_master')
 @section('content')
 
-@php
-// dd($DSThietBi[0]->id);
-@endphp
 
 
 <section class="table_area">
@@ -32,9 +29,8 @@
                     <select style="height: 100% ;border-radius: 10px; border: 1px solid #f1f1f1"
                         name="TinhTrang" class="form-control">
                         <option value="">Chọn tình trạng</option>
-                        @foreach ($DSTinhTrang as $TinhTrang)
-                            <option value="{{ $TinhTrang->TinhTrang }}">{{ $TinhTrang->TinhTrang }}</option>
-                        @endforeach
+                        <option value="Đang Sửa Chữa">Đang Sửa Chữa</option>
+                        <option value="Đang Báo Hỏng">Đang Báo Hỏng</option>
                     </select>
                 </div>
                 <div class="col-sm-3 col-3">
@@ -65,7 +61,7 @@
     </form>
     <div class="panel">
         <div class="panel_header">
-            <div class="panel_title" style="text-align:center"><span>Danh Sách Thiết Bị</span></div>
+            <div class="panel_title" style="text-align:center"><span>Danh Sách Thiết Bị Đang Sửa Chữa, Báo Hỏng</span></div>
 
         </div>
         <div class="panel_body">
@@ -122,13 +118,20 @@
 
                             <td>
                                 
-
-                                @if ($ThietBi->TinhTrang == 'Mới')
-                                <a href="/thietbi/getbangiao/{{$ThietBi->id}}" ><i class="fa fa-check"
-                                        style="font-size: 15px; color:#1ebb33;" title="Bàn giao thiết bị"
+                                @if ($ThietBi->TinhTrang == 'Đang Báo Hỏng')
+                                <a href="/thietbi/getsuachua/{{$ThietBi->id}}" ><i class="far fa-plus-square"
+                                        style="font-size: 15px; color:#070707;" title="Tạo lịch sửa chữa"
                                         aria-hidden="true"></i></a>
                                 @endif
-                                @if ($ThietBi->TinhTrang == 'Đang Sử Dụng')
+                                @if ($ThietBi->TinhTrang == 'Đang Sửa Chữa')
+                                <a href="/thietbi/getcapnhat/{{$ThietBi->id}}" ><i class="	fa fa-check-square"
+                                        style="font-size: 15px; color:#1ebb33;" title="Cập nhật tình trạng"
+                                        aria-hidden="true"></i></a>
+                                @endif
+                                <a href="/thietbi/lichsusuachua/{{$ThietBi->id}}" ><i class="	fa fa-list"
+                                    style="font-size: 15px; color:#006bf7;" title="Xem lịch sử sửa chữa"
+                                    aria-hidden="true"></i></a>
+                                {{-- @if ($ThietBi->TinhTrang == 'Đang Sử Dụng')
                                 <a href="/thietbi/getbaohong/{{$ThietBi->id}}" ><i class="fas fa-exclamation-triangle"
                                         style="font-size: 15px; color:#ff0000;" title="Báo hỏng thiết bị"
                                         aria-hidden="true"></i></a>
@@ -147,7 +150,7 @@
                                 <a href="/thietbi/xoa/{{$ThietBi->id}}" onclick="return confirm('Bạn có muốn xóa?')"><i
                                         class="fa fa-trash" style="font-size: 15px;color:#ff0404" title="Xóa thiết bị"
                                         aria-hidden="true"></i>
-                                </a>
+                                </a> --}}
                             </td>
                         </tr>
                         @endforeach
@@ -155,7 +158,7 @@
 
                     
                 </table>
-                {{ $DSThietBi->links('pagination::bootstrap-4') }}
+                {{-- {{ $DSThietBi->links('pagination::bootstrap-4') }} --}}
             </div>
         </div>
     </div> <!-- /table -->

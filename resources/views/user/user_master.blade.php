@@ -23,6 +23,7 @@
     <!-- <link rel="stylesheet" href="assets/plugins/chartjs-bar-chart/chart.css"> -->
     <!--Custom CSS-->
     <link rel="stylesheet" href="{{ asset('UserBackend/panel/assets/css/style.css') }}">
+    @yield('css')
     <!--Toaster notification-->
     <title>Laravel 8 Toastr Notification Example - websolutionstuff.com</title>
 
@@ -36,6 +37,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+    {{-- custom script at header --}}
+    @yield('header_script')
 
 </head>
 
@@ -64,7 +67,6 @@
 
         <div class="content_wrapper">
             @yield('content')
-            @yield('user')
         </div>
         <!--/ content wrapper -->
     </div>

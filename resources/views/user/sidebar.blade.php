@@ -15,6 +15,7 @@
                 <ul class="dashboard-menu">
                     <li><a href="{{route('thietbi.danhsach')}}">Danh sách thiết bị</a></li>
                     <li><a href="{{route('thietbi.getthem')}}">Thêm mới thiết bị</a></li>
+                    <li><a href="{{route('thietbi.suachua')}}">Sửa chữa thiết bị</a></li>
                 </ul>
             {{-- </li>
             <li class="single-nav-wrapper">

@@ -719,6 +719,47 @@ for (var i = 0; i < all_spc.length; i++)
     </script>
 
 </form>
+<section class="table_area">
+    
+    <div class="panel">
+        <div class="panel_header">
+            <div class="panel_title" style="text-align:center"><span>Lịch sử sửa chữa</span></div>
+
+        </div>
+        <div class="panel_body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Ngày sửa chữa</th>
+                            <th>Ngày sửa xong</th>
+                            <th>Tình trạng sau khi sửa</th>
+                            <th>Chi phí</th>
+                            <th>Ghi Chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php($i = 1)
+                        @foreach ($DSSuaChua as $SuaChua)
+                        <tr>
+                            <td>{{ $i++ }}</td>
+                            <td>{{ $SuaChua->NgaySuaChua }}</td>
+                            <td>{{ $SuaChua->NgaySuaXong }}</td>
+                            <td>{{ $SuaChua->TinhTrangSauKhiSua }}</td>
+                            <td>{{ $SuaChua->ChiPhi }}</td>
+                            <td>{{ $SuaChua->GhiChu }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+
+                    
+                </table>
+                {{-- {{ $DSThietBi->links('pagination::bootstrap-4') }} --}}
+            </div>
+        </div>
+    </div> <!-- /table -->
+</section>
 <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.30073"></script>
 <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.30073"></script>
 

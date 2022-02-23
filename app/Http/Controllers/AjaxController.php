@@ -12,6 +12,7 @@ class AjaxController extends Controller
     public function GetLoaiThietBi($idNhomThietBi)
     {
         $DSLoaiThietBi = LoaiThietBi::where('idNhomThietBi', $idNhomThietBi)->get();
+        echo "<option value=''> Chọn loại thiết bị</option>";
         foreach ($DSLoaiThietBi as $LoaiThietBi) {
             echo "<option value='$LoaiThietBi->idLoaiThietBi'>$LoaiThietBi->idLoaiThietBi</option>";
         }

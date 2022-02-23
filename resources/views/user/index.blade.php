@@ -1,6 +1,6 @@
 @extends('user.user_master')
 @section('content')
-<div class="page-wrapper">
+{{-- <div class="page-wrapper">
     <div class="content">
         <div class="row">
 
@@ -78,6 +78,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection

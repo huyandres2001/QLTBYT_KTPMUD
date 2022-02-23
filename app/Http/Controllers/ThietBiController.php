@@ -16,7 +16,9 @@ use App\Models\NhaCungCap;
 use App\Http\Requests\BanGiaoThietBiRequest;
 use App\Models\BaoHong;
 use App\Http\Requests\BaoHongRequest;
-
+use App\Models\TinhTrang;
+use App\Http\Requests\SuaChuaRequest;
+Use App\Models\SuaChua;
 class ThietBiController extends Controller
 {
     //
@@ -44,6 +46,10 @@ class ThietBiController extends Controller
         # code...
         $data['DSThietBi'] = $this->ThietBi::paginate(10);
         $id = Auth::user()->id;
+        $data['DSKhoaPhong'] = KhoaPhong::all();
+        $data['DSTinhTrang'] = TinhTrang::all();
+        $data['DSNhomThietBi'] = NhomThietBi::all();
+        $data['DSLoaiThietBi'] = LoaiThietBi::all();
         $data['user'] = User::find($id);
         $data['Count'] = ThietBi::count();
         return view('ThietBi.DanhSach', $data);
@@ -108,7 +114,7 @@ class ThietBiController extends Controller
         $data['DSNhaCungCap'] = NhaCungCap::orderBy('TenNhaCungCap')->get();
         return view('ThietBi.Sua', $data);
     }
-    public function PostSua(ThietBiRequest $request, $id)
+    public function PostSua(Request $request, $id)
     {
         $ThietBi = ThietBi::where('Serial', $request->Serial)->get()->first();
         if ($ThietBi) {
@@ -120,13 +126,15 @@ class ThietBiController extends Controller
                 );
             }
         }
+        //do request có cái _token nên phải loại trừ
         $ThietBi->update($request->except('_token'));
         $image = $request->file('AnhMinhHoa');
         if ($image) {
+            @unlink(public_path($ThietBi->AnhMinhHoa));
             $image_name = date('dmy_H_s_i');
             $ext = strtolower($image->getClientOriginalExtension());
             $image_full_name = $image_name . '.' . $ext;
-            $upload_path = 'public/upload/ThietBi/';
+            $upload_path = 'upload/ThietBi/';
             $img_url = $upload_path . $image_full_name;
             $image->move($upload_path, $image_full_name);
             $ThietBi->AnhMinhHoa = $img_url;
@@ -139,6 +147,7 @@ class ThietBiController extends Controller
     public function Xem($id)
     {
         $data['ThietBi'] = ThietBi::find($id);
+        $data['DSSuaChua'] = SuaChua::where('SerialThietBiHong', $data['ThietBi']->Serial)->get();
         $data['user'] = User::find(Auth::user()->id);
         return view('ThietBi.Xem', $data);
     }
@@ -205,5 +214,107 @@ class ThietBiController extends Controller
         $ThietBi->TinhTrang = "Đang Báo Hỏng";
         $ThietBi->save();
         return redirect('/thietbi/danhsach')->with('warning', 'Đã báo hỏng thiết bị');
+    }
+    public function TimKiem(Request $request)
+    {
+        $DSThietBi = DB::table('thietbi');
+        // $data['DSThietBi'] = ThietBi::all();
+        $id = Auth::user()->id;
+        $data['DSKhoaPhong'] = KhoaPhong::all();
+        $data['DSTinhTrang'] = TinhTrang::all();
+        $data['DSNhomThietBi'] = NhomThietBi::all();
+        $data['DSLoaiThietBi'] = LoaiThietBi::all();
+        $data['user'] = User::find($id);
+        if($request->Ten_Model_Serial != null){
+            $DSThietBi = $DSThietBi->where('model', 'like', '%' . $request->Ten_Model_Serial . '%')
+            ->orwhere('TenThietBi', 'like', '%' . $request->Ten_Model_Serial . '%')
+            ->orwhere('Serial', 'like', '%' . $request->Ten_Model_Serial . '%');
+        }
+        if ($request->KhoaPhong){
+            $DSThietBi = $DSThietBi->where('idKhoaPhongSuDung', $request->KhoaPhong);
+        }
+        if ($request->TinhTrang) {
+            $DSThietBi = $DSThietBi->where('TinhTrang', $request->TinhTrang);
+        }
+        if ($request->idNhomThietBi) {
+            $DSThietBi = $DSThietBi->where('idNhomThietBi', $request->idNhomThietBi);
+        }
+        if ($request->idLoaiThietBi) {
+            $DSThietBi = $DSThietBi->where('idLoaiThietBi', $request->idLoaiThietBi);
+        }
+        $DSThietBi = $DSThietBi->paginate(10);
+        $data['Count'] = $DSThietBi->count();
+        return view('ThietBi.DanhSach', $data, compact('DSThietBi'));
+        
+    }
+    public function GetDanhSachSuaChua()
+    {
+        # code...
+        $data['DSThietBi'] = ThietBi::where('TinhTrang', 'Đang Sửa Chữa')->orWhere('TinhTrang', 'Đang Báo Hỏng')->get();
+        $id = Auth::user()->id;
+        $data['DSKhoaPhong'] = KhoaPhong::all();
+        $data['DSTinhTrang'] = TinhTrang::all();
+        $data['DSNhomThietBi'] = NhomThietBi::all();
+        $data['DSLoaiThietBi'] = LoaiThietBi::all();
+        $data['user'] = User::find($id);
+        $data['Count'] = $data['DSThietBi']->count();
+        return view('ThietBi.DanhSachSuaChua', $data);
+    }
+    public function GetSuaChua($id)
+    {
+        # code...
+        $data['ThietBi'] = ThietBi::find($id);
+        $data['user'] = User::find(Auth::user()->id);
+        $data['DSDonViBaoTri'] = DonViBaoTri::all();
+        return view('ThietBi.SuaChua', $data);
+    }
+    public function PostSuaChua(SuaChuaRequest $request)
+    {
+        # code...
+        $SuaChua['NgaySuaChua'] = $request->NgaySuaChua;
+        $SuaChua['GhiChu'] = $request->GhiChu;
+        $SuaChua['SerialThietBiHong'] = $request->SerialThietBiHong;
+        $ThietBi = ThietBi::where('Serial', $request->SerialThietBiHong)->get();
+        $ThietBi[0]->TinhTrang = 'Đang Sửa Chữa';
+        $ThietBi[0]->save();
+        DB::table('suachua')->insert($SuaChua);
+        return redirect('/thietbi/danhsachsuachua')->with('message','Tạo lịch sửa chữa thành công!');
+    }
+    public function LichSuSuaChua($id)
+    {
+        # code...
+        $data['ThietBi'] = ThietBi::find($id);
+        $data['DSSuaChua'] = SuaChua::where('SerialThietBiHong', $data['ThietBi']->Serial)->get();
+        return view('ThietBi.LichSuSuaChua', $data );
+    }
+    public function GetCapNhat($id)
+    {
+        # code...
+        $data['ThietBi'] = ThietBi::find($id);
+        $SuaChua = SuaChua::where('SerialThietBiHong', $data['ThietBi']->Serial)->orderBy('NgaySuaChua')->get();
+        $data['SuaChua'] = $SuaChua[0];
+        return view('ThietBi.CapNhatSuaChua', $data);
+    }
+    public function PostCapNhat(Request $request)
+    {
+        # code...
+        $request->validate(['ChiPhi' => 'required',
+        'NgaySuaXong' => 'required',
+        'TinhTrang'=>'required',] , 
+        ['ChiPhi.required' => 'Bạn chưa nhập chi phí',
+        'NgaySuaXong.required' => 'Bạn chưa chọn ngày sửa xong',
+        'TinhTrang.required' => 'Bạn chưa chọn tình Trạng']);
+
+        $ThietBi = ThietBi::where('Serial', $request->SerialThietBiHong)->get();
+        $ThietBi[0]->TinhTrang = $request->TinhTrang;
+        $ThietBi[0]->save();
+
+        $SuaChua = SuaChua::where('SerialThietBiHong', $request->SerialThietBiHong)->orderBy('NgaySuaChua')->get();
+        $SuaChua[0]->NgaySuaXong = $request->NgaySuaXong;
+        $SuaChua[0]->ChiPhi = $request->ChiPhi;
+        $SuaChua[0]->GhiChu = $SuaChua[0]->GhiChu . '\n' . $request->GhiChu;
+        $SuaChua[0]->TinhTrangSauKhiSua = $request->TinhTrang == 'Đang Sử Dụng' ? 'Đã sửa xong, hoạt động tốt' : 'Không thể sửa, ngừng sử dụng';
+        $SuaChua[0]->save();
+        return redirect('/thietbi/danhsachsuachua')->with('message', 'Cập nhật trạng thái thành công');
     }
 }
