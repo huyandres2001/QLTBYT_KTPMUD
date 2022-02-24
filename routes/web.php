@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+
+use App\Http\Controllers\VatTuController;
 use App\Http\Controllers\MainUserController;
 use App\Http\Controllers\ThietBiController;
 use App\Http\Controllers\AjaxController;
@@ -61,6 +64,18 @@ Route::group(['prefix' => 'thietbi'], function () {
     Route::get('/timkiem', [ThietBiController::class, 'TimKiem']);
 
 });
+
+Route::group(['prefix' => 'vattu'], function () {
+    Route::get('/danhsach', [VatTuController::class, 'DanhSach'])->name('vattu.danhsach');
+    Route::get('/getthem', [VatTuController::class, 'GetThem']);
+    Route::post('/postthem', [VatTuController::class, 'PostThem']);
+    Route::get('/xem/{id}', [VatTuController::class, 'Xem']);
+    Route::get('/getsua/{id}',[VatTuController::class, 'GetSua']);
+    Route::post('/postsua/{id}',[VatTuController::class,'PostSua']);
+    Route::get('/xoa/{id}',[VatTuController::class, 'Xoa']);
+    Route::get('/timkiem', [VatTuController::class, 'TimKiem']);
+});
+
 
 Route::group(['prefix' => 'ajax'], function () {
     Route::get('/LoaiThietBi/{idNhomThietBi}', [AjaxController::class, 'GetLoaiThietBi']);

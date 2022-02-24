@@ -39,7 +39,6 @@
 
     {{-- custom script at header --}}
     @yield('header_script')
-
 </head>
 
 <body id="page-top">

@@ -11,11 +11,11 @@ class VatTu extends Model
     protected $table = "vattu";
     protected $fillable = [
         'TenVatTu', 'idVatTu', 'LoaiVatTu', 'SoLuong', 'DonViTinh',
-         'TrangThai', 'SerialThietBiTuongUng', 'GiaNhap', 'HangSanXuat', 
+         'TinhTrang', 'SerialThietBiTuongUng', 'GiaNhap', 'HangSanXuat', 
          'XuatXu', 'idNhaCungCap', 'Serial', 'Model', 'NamSanXuat', 
          'NamSuDung', 'NgayNhapKho', 'HanSuDung', 'ThongSoKyThuat', 
          'CauHinhKyThuat', 'QuyTrinhSuDung',  
-         'GhiChu', 
+         'GhiChu', 'AnhMinhHoa'
     ];
     public function ThietBiTuongUng(Type $var = null)
     {

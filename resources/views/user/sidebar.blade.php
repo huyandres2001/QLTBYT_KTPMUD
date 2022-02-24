@@ -17,6 +17,21 @@
                     <li><a href="{{route('thietbi.getthem')}}">Thêm mới thiết bị</a></li>
                     <li><a href="{{route('thietbi.suachua')}}">Sửa chữa thiết bị</a></li>
                 </ul>
+                
+            </li>
+            <li class="single-nav-wrapper">
+                <a class="has-arrow menu-item" href="#" aria-expanded="false">
+                    <span class="left-icon"><i class="	fa fa-medkit"></i></span>
+                    <span class="menu-text">Quản lý vật tư</span>
+                </a>
+                <ul class="dashboard-menu">
+                    <li><a href="/vattu/danhsach">Danh sách vật tư</a></li>
+                </ul>
+                <ul class="dashboard-menu">
+                    <li><a href="/vattu/getthem">Thêm mới vật tư</a></li>
+                </ul>
+            </li>
+            
             {{-- </li>
             <li class="single-nav-wrapper">
                 <a class="has-arrow menu-item" href="#" aria-expanded="false">

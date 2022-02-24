@@ -16,12 +16,14 @@ class CreateVattuTable extends Migration
         Schema::create('vattu', function (Blueprint $table) {
             $table->id();
             $table->string('TenVatTu');
+            $table->string('AnhMinhHoa')->nullable();
             $table->string('LoaiVatTu');
             $table->string('SoLuong');
+            $table->string('DaDung')->nullable();
             $table->string('DonViTinh')->nullable();
-            $table->integer('TrangThai')->nullable();
+            $table->string('TinhTrang')->nullable();
             $table->string('SerialThietBiTuongUng')->nullable();
-            $table->string('GiaNhap');
+            $table->string('GiaNhap')->nullable();
             $table->string('HangSanXuat')->nullable();
             $table->string('XuatXu')->nullable();
             $table->string('idNhaCungCap')->nullable();
